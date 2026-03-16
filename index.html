@@ -73,7 +73,13 @@ nav.scrolled{
   transition:all .2s;
 }
 .nav-cta:hover{background:var(--teal2);transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,180,162,0.35);}
-@media(max-width:960px){nav{padding:16px 20px;}nav.scrolled{padding:12px 20px;}.nav-links,.nav-cta{display:none;}}
+@media(max-width:960px){
+  nav{padding:14px 20px;justify-content:center;}
+  nav.scrolled{padding:10px 20px;}
+  .nav-links,.nav-cta{display:none;}
+  .nav-logo-mark{width:30px;height:30px;}
+  .nav-wordmark{font-size:18px;}
+}
 
 /* HERO */
 .hero{
@@ -85,7 +91,7 @@ nav.scrolled{
 }
 .hero-bg{
   position:absolute;inset:0;
-  background:url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1800&q=85') center/cover no-repeat;
+  background:url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1200&q=85&auto=format&fit=crop') center/cover no-repeat;
   transform:scale(1.05);
   animation:zoomOut 12s ease-out forwards;
 }
@@ -636,6 +642,32 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
 .fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
 .fu.show{opacity:1;transform:translateY(0);}
 .fu.d1{transition-delay:.06s;}.fu.d2{transition-delay:.14s;}.fu.d3{transition-delay:.22s;}.fu.d4{transition-delay:.30s;}
+/* MOBILE FIXES */
+@media(max-width:960px){
+  .hero{padding-top:80px!important;}
+  .hero-eyebrow{display:none!important;}
+  .hero-scroll{display:none!important;}
+  .hero h1{font-size:36px;}
+  .hero-sub{font-size:15px;}
+  .hero-btns{flex-direction:column;gap:10px;width:100%;}
+  .btn-prim,.btn-sec{width:100%;justify-content:center;padding:14px 20px;}
+  .hero-stats{margin-top:36px;}
+  .hero-stat{padding:16px 8px 0;}
+  .h-stat-num{font-size:26px;}
+  .h-stat-label{font-size:11px;}
+  .dor-grid{grid-template-columns:1fr;}
+  .serv-img{height:180px;}
+  .nicho-grid{grid-template-columns:repeat(2,1fr);}
+  .processo-steps{grid-template-columns:1fr 1fr;gap:28px;}
+  .processo-connector{display:none;}
+  .pacotes-grid{grid-template-columns:1fr;}
+  .pk-card.featured{transform:none;}
+  .img-break{height:280px;}
+  .img-break-text{font-size:22px;}
+  .footer-inner{flex-direction:column;text-align:center;}
+  .footer-links{justify-content:center;flex-wrap:wrap;}
+  .wpp-float{bottom:16px;right:16px;width:50px;height:50px;}
+}
 </style>
 </head>
 <body>
@@ -705,7 +737,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
   <div class="container">
     <div class="dor-layout">
       <div class="dor-img-col fu">
-        <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&q=85" alt="Médico consultório">
+        <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&q=85&auto=format" alt="Médico consultório">
       </div>
       <div>
         <div class="section-label fu">
@@ -757,7 +789,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
     <p class="section-sub fu">Três frentes integradas com um objetivo único: mais pacientes na sua agenda todo mês.</p>
     <div class="servicos-grid">
       <div class="serv-card fu d1">
-        <img class="serv-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Tráfego Pago">
+        <img class="serv-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80&auto=format" alt="Tráfego Pago">
         <div class="serv-body">
           <div class="serv-num">Serviço 01</div>
           <div class="serv-ico-row">
@@ -775,7 +807,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
         </div>
       </div>
       <div class="serv-card fu d2">
-        <img class="serv-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="Redes Sociais">
+        <img class="serv-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80&auto=format" alt="Redes Sociais">
         <div class="serv-body">
           <div class="serv-num">Serviço 02</div>
           <div class="serv-ico-row">
@@ -793,7 +825,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
         </div>
       </div>
       <div class="serv-card fu d3">
-        <img class="serv-img" src="https://images.unsplash.com/photo-1536240478700-b869ad10e128?w=600&q=80" alt="Conteúdo">
+        <img class="serv-img" src="https://images.unsplash.com/photo-1536240478700-b869ad10e128?w=600&q=80&auto=format" alt="Conteúdo">
         <div class="serv-body">
           <div class="serv-num">Serviço 03</div>
           <div class="serv-ico-row">
@@ -834,7 +866,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
 
 <!-- IMG BREAK -->
 <div class="img-break">
-  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80" alt="Clínica">
+  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1200&q=80&auto=format" alt="Clínica">
   <div class="img-break-overlay">
     <div class="img-break-line"></div>
     <div class="img-break-text">Mais cliques. Mais pacientes.<br><span>Mais resultado.</span></div>
