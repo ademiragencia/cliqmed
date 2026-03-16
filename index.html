@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cliqmed — Marketing para Clínicas</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&family=Lora:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+:root{
+  --navy:#06101e;
+  --navy2:#0a1a30;
+  --navy3:#0f2240;
+  --teal:#00B4A2;
+  --teal2:#00D4BF;
+  --white:#F5F8FA;
+  --offwhite:#e8eef4;
+  --gray:#7a8fa6;
+  --lightgray:#b0c0ce;
+  --border:rgba(0,180,162,0.16);
+  --gold:#c9a84c;
+}
+body{background:var(--navy);color:var(--white);font-family:'Montserrat',sans-serif;overflow-x:hidden;line-height:1.6;}
+::-webkit-scrollbar{width:4px;}
+::-webkit-scrollbar-track{background:var(--navy);}
+::-webkit-scrollbar-thumb{background:var(--teal);border-radius:2px;}
+
+/* NAV */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:500;
+  padding:20px 64px;
+  display:flex;align-items:center;justify-content:space-between;
+  transition:all .4s;
+}
+nav.scrolled{
+  background:rgba(6,16,30,0.96);
+  backdrop-filter:blur(20px);
+  padding:14px 64px;
+  border-bottom:1px solid rgba(0,180,162,0.1);
+  box-shadow:0 4px 40px rgba(0,0,0,0.4);
+}
+.nav-logo{
+  display:flex;align-items:center;gap:10px;
+  text-decoration:none;
+}
+.nav-logo-mark{width:34px;height:34px;flex-shrink:0;}
+.nav-wordmark{
+  font-family:'Montserrat',sans-serif;
+  font-size:20px;font-weight:800;
+  letter-spacing:1px;color:var(--white);
+  text-transform:uppercase;
+}
+.nav-wordmark span{color:var(--teal);}
+.nav-links{display:flex;gap:36px;list-style:none;}
+.nav-links a{
+  font-family:'Montserrat',sans-serif;
+  font-size:12px;font-weight:600;
+  color:rgba(245,248,250,0.75);
+  text-decoration:none;
+  letter-spacing:1.5px;text-transform:uppercase;
+  transition:color .2s;
+}
+.nav-links a:hover{color:var(--teal);}
+.nav-cta{
+  background:var(--teal);color:var(--navy);
+  padding:11px 24px;border-radius:6px;
+  font-family:'Montserrat',sans-serif;
+  font-size:12px;font-weight:700;
+  letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;
+  display:flex;align-items:center;gap:8px;
+  transition:all .2s;
+}
+.nav-cta:hover{background:var(--teal2);transform:translateY(-1px);box-shadow:0 6px 24px rgba(0,180,162,0.35);}
+@media(max-width:960px){nav{padding:16px 20px;}nav.scrolled{padding:12px 20px;}.nav-links,.nav-cta{display:none;}}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;align-items:center;justify-content:center;
+  position:relative;overflow:hidden;
+  text-align:center;
+  padding:0 24px;
+}
+.hero-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1629909615184-74f495363b67?w=1800&q=85') center/cover no-repeat;
+  transform:scale(1.05);
+  animation:zoomOut 12s ease-out forwards;
+}
+@keyframes zoomOut{from{transform:scale(1.05);}to{transform:scale(1.0);}}
+.hero-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(
+    to bottom,
+    rgba(6,16,30,0.55) 0%,
+    rgba(6,16,30,0.72) 50%,
+    rgba(6,16,30,0.92) 100%
+  );
+}
+.hero-grid-lines{
+  position:absolute;inset:0;
+  background-image:linear-gradient(rgba(0,180,162,0.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,180,162,0.025) 1px,transparent 1px);
+  background-size:100px 100px;
+}
+.hero-content{
+  position:relative;z-index:2;
+  max-width:860px;margin:0 auto;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:10px;
+  margin-bottom:28px;
+  animation:fadeUp .7s ease both;
+}
+.hero-eyebrow-line{width:40px;height:1px;background:var(--teal);}
+.hero-eyebrow-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:11px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;
+  color:var(--teal);
+}
+.hero h1{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(38px,5.5vw,76px);
+  font-weight:900;
+  line-height:1.05;
+  letter-spacing:-1px;
+  margin-bottom:20px;
+  animation:fadeUp .7s .1s ease both;opacity:0;animation-fill-mode:forwards;
+}
+.hero h1 em{
+  font-family:'Lora',serif;
+  font-style:italic;
+  font-weight:600;
+  color:var(--teal);
+}
+.hero-sub{
+  font-family:'Lora',serif;
+  font-size:clamp(16px,1.8vw,20px);
+  font-style:italic;
+  color:rgba(245,248,250,0.72);
+  line-height:1.7;
+  max-width:580px;margin:0 auto 44px;
+  animation:fadeUp .7s .2s ease both;opacity:0;animation-fill-mode:forwards;
+}
+.hero-btns{
+  display:flex;gap:14px;justify-content:center;flex-wrap:wrap;
+  animation:fadeUp .7s .3s ease both;opacity:0;animation-fill-mode:forwards;
+}
+.btn-prim{
+  background:var(--teal);color:var(--navy);
+  padding:16px 36px;border-radius:6px;
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;display:flex;align-items:center;gap:10px;
+  transition:all .25s;
+  box-shadow:0 4px 32px rgba(0,180,162,0.3);
+}
+.btn-prim:hover{background:var(--teal2);transform:translateY(-2px);box-shadow:0 8px 48px rgba(0,180,162,0.45);}
+.btn-sec{
+  background:transparent;color:var(--white);
+  padding:16px 36px;border-radius:6px;
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;display:flex;align-items:center;gap:10px;
+  border:1.5px solid rgba(245,248,250,0.25);
+  transition:all .25s;
+}
+.btn-sec:hover{border-color:var(--teal);color:var(--teal);}
+.hero-stats{
+  display:flex;gap:0;justify-content:center;
+  margin-top:72px;
+  border-top:1px solid rgba(245,248,250,0.1);
+  animation:fadeUp .7s .4s ease both;opacity:0;animation-fill-mode:forwards;
+}
+.hero-stat{
+  flex:1;max-width:200px;
+  padding:28px 20px 0;
+  border-right:1px solid rgba(245,248,250,0.08);
+  text-align:center;
+}
+.hero-stat:last-child{border:none;}
+.h-stat-num{
+  font-family:'Montserrat',sans-serif;
+  font-size:36px;font-weight:900;color:var(--teal);line-height:1;
+  margin-bottom:6px;
+}
+.h-stat-label{
+  font-family:'Lora',serif;
+  font-size:13px;font-style:italic;
+  color:rgba(245,248,250,0.55);line-height:1.4;
+}
+.hero-scroll{
+  position:absolute;bottom:32px;left:50%;transform:translateX(-50%);
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  animation:fadeUp .7s .6s ease both;opacity:0;animation-fill-mode:forwards;
+  cursor:pointer;
+}
+.hero-scroll span{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:rgba(245,248,250,0.4);}
+.scroll-arrow{width:20px;height:20px;border-right:1.5px solid rgba(245,248,250,0.3);border-bottom:1.5px solid rgba(245,248,250,0.3);transform:rotate(45deg);animation:scrollBounce 2s infinite;}
+@keyframes scrollBounce{0%,100%{transform:rotate(45deg) translateY(0);}50%{transform:rotate(45deg) translateY(5px);}}
+
+/* SECTION BASE */
+section{padding:110px 64px;}
+@media(max-width:960px){section{padding:80px 20px;}}
+.container{max-width:1200px;margin:0 auto;}
+.section-label{
+  display:flex;align-items:center;gap:14px;
+  margin-bottom:18px;
+}
+.section-label-line{width:32px;height:1.5px;background:var(--teal);flex-shrink:0;}
+.section-label-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;font-weight:700;
+  letter-spacing:4px;text-transform:uppercase;color:var(--teal);
+}
+.section-title{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(28px,3.5vw,46px);
+  font-weight:800;letter-spacing:-0.5px;
+  line-height:1.1;margin-bottom:14px;
+}
+.section-title em{
+  font-family:'Lora',serif;
+  font-style:italic;font-weight:600;
+  color:var(--teal);
+}
+.section-sub{
+  font-family:'Lora',serif;
+  font-size:16px;font-style:italic;
+  color:rgba(245,248,250,0.6);
+  line-height:1.7;max-width:540px;
+}
+
+/* DOR */
+.dor{background:var(--navy2);}
+.dor-layout{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;}
+@media(max-width:960px){.dor-layout{grid-template-columns:1fr;}.dor-img-col{display:none;}}
+.dor-img-col{position:relative;}
+.dor-img-col img{width:100%;height:540px;object-fit:cover;border-radius:4px;display:block;}
+.dor-img-col::before{
+  content:'';
+  position:absolute;top:-16px;left:-16px;right:16px;bottom:16px;
+  border:1.5px solid rgba(0,180,162,0.25);
+  border-radius:4px;
+  pointer-events:none;
+  z-index:0;
+}
+.dor-img-col img{position:relative;z-index:1;}
+.dor-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:40px;}
+.dor-card{
+  background:var(--navy3);
+  border:1px solid rgba(255,255,255,0.05);
+  border-left:3px solid var(--teal);
+  border-radius:4px;padding:24px;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
+}
+.dor-card:hover{transform:translateY(-3px);box-shadow:0 12px 40px rgba(0,0,0,0.3);border-left-color:var(--teal2);}
+.dor-card-ico{
+  width:38px;height:38px;
+  background:rgba(0,180,162,0.1);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--teal);margin-bottom:14px;
+}
+.dor-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:14px;font-weight:700;
+  margin-bottom:8px;letter-spacing:0.2px;
+}
+.dor-card p{
+  font-family:'Lora',serif;
+  font-size:13px;font-style:italic;
+  color:rgba(245,248,250,0.55);line-height:1.65;
+}
+
+/* SERVIÇOS */
+.servicos-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px;}
+@media(max-width:960px){.servicos-grid{grid-template-columns:1fr;}}
+.serv-card{
+  background:var(--navy2);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;overflow:hidden;
+  transition:transform .3s,box-shadow .3s;
+  position:relative;
+}
+.serv-card::after{
+  content:'';
+  position:absolute;bottom:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,var(--teal),var(--teal2));
+  transform:scaleX(0);transform-origin:left;
+  transition:transform .3s;
+}
+.serv-card:hover{transform:translateY(-6px);box-shadow:0 20px 60px rgba(0,0,0,0.4);}
+.serv-card:hover::after{transform:scaleX(1);}
+.serv-img{width:100%;height:210px;object-fit:cover;display:block;filter:saturate(0.85);}
+.serv-body{padding:30px;}
+.serv-num{
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;font-weight:700;letter-spacing:3px;
+  color:var(--teal);opacity:0.65;margin-bottom:16px;
+  text-transform:uppercase;
+}
+.serv-ico-row{display:flex;align-items:center;gap:14px;margin-bottom:14px;}
+.serv-ico{
+  width:42px;height:42px;
+  background:rgba(0,180,162,0.1);
+  border:1px solid rgba(0,180,162,0.2);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--teal);flex-shrink:0;
+}
+.serv-card h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:18px;font-weight:800;letter-spacing:-0.2px;
+}
+.serv-card p{
+  font-family:'Lora',serif;
+  font-size:14px;font-style:italic;
+  color:rgba(245,248,250,0.6);line-height:1.7;
+  margin:10px 0 20px;
+}
+.serv-list{list-style:none;}
+.serv-list li{
+  font-family:'Montserrat',sans-serif;
+  font-size:12px;font-weight:500;
+  color:rgba(245,248,250,0.7);
+  padding:6px 0;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.serv-list li:last-child{border:none;}
+.chk{color:var(--teal);flex-shrink:0;}
+
+/* NICHO */
+.nicho{background:var(--navy2);}
+.nicho-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:16px;margin-top:52px;
+}
+@media(max-width:960px){.nicho-grid{grid-template-columns:repeat(2,1fr);}}
+.nicho-item{
+  background:var(--navy3);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:4px;padding:28px 20px;
+  text-align:center;
+  transition:all .25s;
+  position:relative;overflow:hidden;
+}
+.nicho-item::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(0,180,162,0.06),transparent);
+  opacity:0;transition:opacity .25s;
+}
+.nicho-item:hover{border-color:rgba(0,180,162,0.3);transform:translateY(-4px);}
+.nicho-item:hover::before{opacity:1;}
+.nicho-ico{
+  width:54px;height:54px;
+  background:rgba(0,180,162,0.1);
+  border:1px solid rgba(0,180,162,0.18);
+  border-radius:4px;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 16px;color:var(--teal);
+  position:relative;z-index:1;
+}
+.nicho-item span{
+  font-family:'Montserrat',sans-serif;
+  font-size:12px;font-weight:600;
+  letter-spacing:0.5px;
+  color:rgba(245,248,250,0.82);
+  position:relative;z-index:1;
+}
+
+/* IMG BREAK */
+.img-break{position:relative;height:420px;overflow:hidden;}
+@media(max-width:960px){.img-break{height:280px;}}
+.img-break img{width:100%;height:100%;object-fit:cover;display:block;filter:saturate(.65);}
+.img-break-overlay{
+  position:absolute;inset:0;
+  background:rgba(6,16,30,0.7);
+  display:flex;align-items:center;justify-content:center;
+  flex-direction:column;gap:16px;
+}
+.img-break-text{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(20px,3.5vw,48px);
+  font-weight:900;letter-spacing:2px;text-transform:uppercase;
+  text-align:center;line-height:1.15;
+}
+.img-break-text span{
+  font-family:'Lora',serif;
+  font-style:italic;font-weight:600;
+  color:var(--teal);letter-spacing:0;
+  text-transform:none;
+}
+.img-break-line{width:60px;height:1.5px;background:var(--teal);}
+
+/* PROCESSO */
+.processo-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:64px;position:relative;}
+@media(max-width:960px){.processo-steps{grid-template-columns:1fr 1fr;gap:32px;}.processo-connector{display:none;}}
+.processo-connector{position:absolute;top:36px;left:12.5%;right:12.5%;height:1px;background:rgba(0,180,162,0.2);}
+.step{text-align:center;padding:0 24px;position:relative;z-index:1;}
+.step-circle{
+  width:72px;height:72px;border-radius:50%;
+  background:var(--navy2);
+  border:1.5px solid rgba(0,180,162,0.4);
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 22px;color:var(--teal);
+  transition:all .3s;
+  position:relative;
+}
+.step-circle::before{
+  content:attr(data-num);
+  position:absolute;top:-8px;right:-8px;
+  width:22px;height:22px;
+  background:var(--teal);color:var(--navy);
+  border-radius:50%;
+  font-family:'Montserrat',sans-serif;
+  font-size:10px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;
+}
+.step:hover .step-circle{background:rgba(0,180,162,0.1);border-color:var(--teal);box-shadow:0 0 32px rgba(0,180,162,0.2);}
+.step h3{
+  font-family:'Montserrat',sans-serif;
+  font-size:14px;font-weight:700;
+  letter-spacing:0.3px;margin-bottom:10px;
+}
+.step p{
+  font-family:'Lora',serif;
+  font-size:13px;font-style:italic;
+  color:var(--gray);line-height:1.65;
+}
+
+/* PACOTES */
+.pacotes{background:var(--navy2);}
+.pacotes-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:60px;align-items:start;}
+@media(max-width:960px){.pacotes-grid{grid-template-columns:1fr;}.pk-card.featured{transform:none;}}
+.pk-card{
+  background:var(--navy3);
+  border:1px solid rgba(255,255,255,0.06);
+  border-radius:4px;padding:40px 32px;
+  transition:transform .25s;
+  position:relative;overflow:hidden;
+}
+.pk-card.featured{
+  background:var(--navy3);
+  border-color:rgba(0,180,162,0.4);
+  transform:scale(1.03);
+  box-shadow:0 0 60px rgba(0,180,162,0.1);
+}
+.pk-card.featured::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,var(--teal),var(--teal2));
+}
+.pk-card:hover{transform:translateY(-5px);}
+.pk-card.featured:hover{transform:scale(1.03) translateY(-5px);}
+.pk-badge{
+  display:inline-flex;align-items:center;gap:6px;
+  background:rgba(0,180,162,0.12);
+  border:1px solid rgba(0,180,162,0.3);
+  color:var(--teal);
+  font-family:'Montserrat',sans-serif;
+  font-size:9px;font-weight:700;letter-spacing:2px;text-transform:uppercase;
+  padding:5px 12px;border-radius:2px;margin-bottom:22px;
+}
+.pk-name{
+  font-family:'Montserrat',sans-serif;
+  font-size:22px;font-weight:800;
+  letter-spacing:-0.3px;margin-bottom:6px;
+}
+.pk-desc{
+  font-family:'Lora',serif;
+  font-size:13px;font-style:italic;
+  color:var(--gray);margin-bottom:6px;
+}
+.pk-price{
+  font-family:'Montserrat',sans-serif;
+  font-size:42px;font-weight:900;color:var(--teal);
+  line-height:1;margin:18px 0 4px;
+  letter-spacing:-1px;
+}
+.pk-price span{font-size:14px;font-weight:600;color:var(--gray);}
+.pk-period{
+  font-family:'Lora',serif;
+  font-size:12px;font-style:italic;
+  color:var(--gray);margin-bottom:24px;
+}
+.pk-divider{height:1px;background:rgba(255,255,255,0.06);margin-bottom:24px;}
+.pk-list{list-style:none;margin-bottom:32px;}
+.pk-list li{
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;font-weight:500;
+  color:rgba(245,248,250,0.75);
+  padding:8px 0;
+  display:flex;align-items:center;gap:10px;
+  border-bottom:1px solid rgba(255,255,255,0.04);
+}
+.pk-list li:last-child{border:none;}
+.pk-check{color:var(--teal);flex-shrink:0;}
+.pk-btn{
+  display:flex;justify-content:center;align-items:center;gap:8px;
+  text-decoration:none;
+  padding:14px;border-radius:4px;
+  font-family:'Montserrat',sans-serif;
+  font-size:12px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  transition:all .2s;
+}
+.pk-outline{border:1.5px solid rgba(0,180,162,0.35);color:var(--teal);}
+.pk-outline:hover{background:rgba(0,180,162,0.08);}
+.pk-filled{background:var(--teal);color:var(--navy);box-shadow:0 4px 24px rgba(0,180,162,0.25);}
+.pk-filled:hover{background:var(--teal2);box-shadow:0 8px 40px rgba(0,180,162,0.4);}
+
+/* MANIFESTO */
+.manifesto{background:var(--navy);position:relative;overflow:hidden;}
+.manifesto-bg{position:absolute;inset:0;background:url('https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=1400&q=70') center/cover no-repeat;opacity:.04;filter:grayscale(100%);}
+.manifesto::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 70% at 50% 50%,rgba(0,180,162,0.05) 0%,transparent 70%);}
+.manifesto-inner{max-width:800px;margin:0 auto;text-align:center;position:relative;z-index:1;}
+.manifesto-eyebrow{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:28px;}
+.manifesto-eyebrow-line{width:32px;height:1px;background:var(--teal);}
+.manifesto-eyebrow-text{font-family:'Montserrat',sans-serif;font-size:10px;font-weight:700;letter-spacing:4px;text-transform:uppercase;color:var(--teal);}
+.manifesto-quote{
+  font-family:'Lora',serif;
+  font-size:clamp(26px,3.5vw,44px);
+  font-weight:600;font-style:italic;
+  line-height:1.2;margin-bottom:36px;
+  color:var(--white);
+}
+.manifesto-quote strong{
+  font-family:'Montserrat',sans-serif;
+  font-style:normal;font-weight:900;
+  color:var(--teal);
+}
+.manifesto-divider{width:1px;height:60px;background:linear-gradient(to bottom,transparent,var(--teal),transparent);margin:0 auto 36px;}
+.manifesto-body{
+  font-family:'Lora',serif;
+  font-size:16px;font-style:italic;
+  color:rgba(245,248,250,0.65);
+  line-height:1.9;text-align:left;
+  border-left:2px solid rgba(0,180,162,0.4);
+  padding-left:28px;margin:0 0 36px;
+}
+.manifesto-body p{margin-bottom:18px;}
+.manifesto-body p:last-child{margin:0;}
+.manifesto-body strong{font-style:normal;color:var(--teal);font-weight:700;}
+.manifesto-sign{
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;font-weight:700;
+  letter-spacing:2px;text-transform:uppercase;
+  color:rgba(245,248,250,0.4);
+  display:flex;align-items:center;justify-content:center;gap:12px;
+}
+.manifesto-sign::before,.manifesto-sign::after{content:'';flex:1;max-width:80px;height:1px;background:rgba(245,248,250,0.12);}
+
+/* CTA FINAL */
+.cta-final{
+  position:relative;overflow:hidden;
+  text-align:center;
+}
+.cta-bg{
+  position:absolute;inset:0;
+  background:url('https://images.unsplash.com/photo-1551076805-e1869033e561?w=1400&q=70') center/cover no-repeat;
+  filter:saturate(.6);
+}
+.cta-overlay{
+  position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(6,16,30,0.94) 0%,rgba(10,26,48,0.9) 100%);
+}
+.cta-inner{position:relative;z-index:1;max-width:680px;margin:0 auto;}
+.cta-inner h2{
+  font-family:'Montserrat',sans-serif;
+  font-size:clamp(30px,4.5vw,54px);
+  font-weight:900;letter-spacing:-0.5px;
+  line-height:1.1;margin-bottom:18px;
+}
+.cta-inner h2 em{
+  font-family:'Lora',serif;
+  font-style:italic;font-weight:600;
+  color:var(--teal);
+}
+.cta-inner p{
+  font-family:'Lora',serif;
+  font-size:17px;font-style:italic;
+  color:rgba(245,248,250,0.62);
+  line-height:1.7;margin-bottom:44px;
+}
+.cta-wpp{
+  display:inline-flex;align-items:center;gap:12px;
+  background:var(--teal);color:var(--navy);
+  padding:18px 44px;border-radius:6px;
+  font-family:'Montserrat',sans-serif;
+  font-size:13px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;
+  text-decoration:none;
+  box-shadow:0 4px 48px rgba(0,180,162,0.35);
+  transition:all .25s;
+}
+.cta-wpp:hover{background:var(--teal2);transform:translateY(-3px);box-shadow:0 12px 60px rgba(0,180,162,0.5);}
+.cta-note{
+  font-family:'Lora',serif;
+  font-size:13px;font-style:italic;
+  color:rgba(245,248,250,0.3);
+  margin-top:20px;
+  display:flex;align-items:center;justify-content:center;gap:8px;
+}
+.cta-note::before{content:'';width:20px;height:1px;background:rgba(245,248,250,0.15);}
+.cta-note::after{content:'';width:20px;height:1px;background:rgba(245,248,250,0.15);}
+
+/* FOOTER */
+footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);padding:52px 64px;}
+@media(max-width:960px){footer{padding:40px 20px;}}
+.footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:24px;}
+@media(max-width:960px){.footer-inner{flex-direction:column;text-align:center;}}
+.footer-logo{font-family:'Montserrat',sans-serif;font-size:18px;font-weight:800;letter-spacing:1px;text-transform:uppercase;color:var(--white);}
+.footer-logo span{color:var(--teal);}
+.footer-links{display:flex;gap:28px;list-style:none;}
+@media(max-width:960px){.footer-links{justify-content:center;flex-wrap:wrap;}}
+.footer-links a{font-family:'Montserrat',sans-serif;font-size:11px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:var(--gray);text-decoration:none;transition:color .2s;}
+.footer-links a:hover{color:var(--teal);}
+.footer-copy{font-family:'Lora',serif;font-size:12px;font-style:italic;color:rgba(122,143,166,0.4);}
+
+/* WPP FLOAT */
+.wpp-float{
+  position:fixed;bottom:28px;right:28px;z-index:200;
+  width:56px;height:56px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 24px rgba(37,211,102,0.45);text-decoration:none;
+  transition:transform .2s,box-shadow .2s;
+  animation:bounceIn .6s .8s ease both;opacity:0;animation-fill-mode:forwards;
+}
+.wpp-float:hover{transform:scale(1.12);box-shadow:0 8px 36px rgba(37,211,102,0.55);}
+@keyframes bounceIn{0%{opacity:0;transform:scale(.4);}70%{transform:scale(1.1);}100%{opacity:1;transform:scale(1);}}
+
+/* FADE UP */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.fu{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease;}
+.fu.show{opacity:1;transform:translateY(0);}
+.fu.d1{transition-delay:.06s;}.fu.d2{transition-delay:.14s;}.fu.d3{transition-delay:.22s;}.fu.d4{transition-delay:.30s;}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <svg class="nav-logo-mark" viewBox="0 0 64 64" fill="none">
+      <rect width="64" height="64" rx="8" fill="rgba(0,180,162,0.12)"/>
+      <rect x="26" y="12" width="12" height="40" rx="4" fill="#00B4A2"/>
+      <rect x="12" y="26" width="40" height="12" rx="4" fill="#00B4A2"/>
+      <circle cx="47" cy="47" r="9" fill="#06101e"/>
+      <path d="M43 44L51 44L47 51L45.5 47.5L43 44Z" fill="#00D4BF"/>
+      <circle cx="47" cy="47" r="8.5" stroke="#00B4A2" stroke-width="1" fill="none"/>
+    </svg>
+    <span class="nav-wordmark">Cliq<span>med</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#servicos">Serviços</a></li>
+    <li><a href="#pacotes">Pacotes</a></li>
+    <li><a href="#processo">Como funciona</a></li>
+    <li><a href="#manifesto">Manifesto</a></li>
+  </ul>
+  <a class="nav-cta" href="https://wa.me/5567920011563?text=Olá!%20Vim%20pelo%20site%20e%20quero%20saber%20mais." target="_blank">
+    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    Falar agora
+  </a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-grid-lines"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <div class="hero-eyebrow-line"></div>
+      <div class="hero-eyebrow-text">Agência especializada em clínicas</div>
+      <div class="hero-eyebrow-line"></div>
+    </div>
+    <h1>Sua clínica merece<br><em>agenda cheia.</em></h1>
+    <p class="hero-sub">Tráfego pago, redes sociais e conteúdo integrados para transformar cliques em pacientes — todo mês.</p>
+    <div class="hero-btns">
+      <a class="btn-prim" href="https://wa.me/5567920011563?text=Quero%20encher%20a%20agenda%20da%20minha%20clínica!" target="_blank">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+        Quero encher minha agenda
+      </a>
+      <a class="btn-sec" href="#servicos">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+        Ver serviços
+      </a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="h-stat-num">+47</div><div class="h-stat-label">pacientes novos por mês em média</div></div>
+      <div class="hero-stat"><div class="h-stat-num">3x</div><div class="h-stat-label">retorno sobre o investimento</div></div>
+      <div class="hero-stat"><div class="h-stat-num">30d</div><div class="h-stat-label">para ver os primeiros resultados</div></div>
+    </div>
+  </div>
+  <div class="hero-scroll" onclick="document.getElementById('dor').scrollIntoView({behavior:'smooth'})">
+    <span>Rolar</span>
+    <div class="scroll-arrow"></div>
+  </div>
+</section>
+
+<!-- DOR -->
+<section class="dor" id="dor">
+  <div class="container">
+    <div class="dor-layout">
+      <div class="dor-img-col fu">
+        <img src="https://images.unsplash.com/photo-1666214280557-f1b5022eb634?w=800&q=85" alt="Médico consultório">
+      </div>
+      <div>
+        <div class="section-label fu">
+          <div class="section-label-line"></div>
+          <div class="section-label-text">O problema</div>
+        </div>
+        <h2 class="section-title fu">Você atende bem.<br><em>O problema é que ninguém sabe.</em></h2>
+        <p class="section-sub fu">Enquanto você espera indicação, seu concorrente está anunciando e enchendo a agenda com os pacientes que deveriam ser seus.</p>
+        <div class="dor-grid">
+          <div class="dor-card fu d1">
+            <div class="dor-card-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="10" y1="14" x2="14" y2="14"/></svg>
+            </div>
+            <h3>Agenda com buraco</h3>
+            <p>Dias inteiros com horários vagos enquanto a clínica poderia estar lotada.</p>
+          </div>
+          <div class="dor-card fu d2">
+            <div class="dor-card-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 15v4a3 3 0 0 0 3 3l4-9V2H5.72a2 2 0 0 0-2 1.7l-1.38 9a2 2 0 0 0 2 2.3z"/><path d="M17 2h2.67A2.31 2.31 0 0 1 22 4v7a2.31 2.31 0 0 1-2.33 2H17"/></svg>
+            </div>
+            <h3>Post sem resultado</h3>
+            <p>Instagram ativo, conteúdo bonito, mas nenhum paciente novo pelo digital.</p>
+          </div>
+          <div class="dor-card fu d3">
+            <div class="dor-card-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+            </div>
+            <h3>Dinheiro jogado fora</h3>
+            <p>Tentou anunciar e não funcionou. A questão não é o anúncio, é a estratégia.</p>
+          </div>
+          <div class="dor-card fu d4">
+            <div class="dor-card-ico">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+            </div>
+            <h3>Concorrente crescendo</h3>
+            <p>Enquanto você pensa em começar, outro já domina a busca na sua cidade.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVIÇOS -->
+<section id="servicos">
+  <div class="container">
+    <div class="section-label fu"><div class="section-label-line"></div><div class="section-label-text">O que fazemos</div></div>
+    <h2 class="section-title fu">Tudo que sua clínica<br><em>precisa para crescer.</em></h2>
+    <p class="section-sub fu">Três frentes integradas com um objetivo único: mais pacientes na sua agenda todo mês.</p>
+    <div class="servicos-grid">
+      <div class="serv-card fu d1">
+        <img class="serv-img" src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=80" alt="Tráfego Pago">
+        <div class="serv-body">
+          <div class="serv-num">Serviço 01</div>
+          <div class="serv-ico-row">
+            <div class="serv-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg></div>
+            <h3>Tráfego Pago</h3>
+          </div>
+          <p>Campanhas no Meta Ads e Google Ads criadas especificamente para saúde, com segmentação cirúrgica e otimização constante.</p>
+          <ul class="serv-list">
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Campanhas Meta Ads</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Google Ads busca e display</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Criativos e copies</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Otimização semanal</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Relatório de resultados</li>
+          </ul>
+        </div>
+      </div>
+      <div class="serv-card fu d2">
+        <img class="serv-img" src="https://images.unsplash.com/photo-1611162617213-7d7a39e9b1d7?w=600&q=80" alt="Redes Sociais">
+        <div class="serv-body">
+          <div class="serv-num">Serviço 02</div>
+          <div class="serv-ico-row">
+            <div class="serv-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="2" width="14" height="20" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg></div>
+            <h3>Gestão de Redes</h3>
+          </div>
+          <p>Perfil profissional, conteúdo estratégico e presença consistente para construir autoridade e atrair pacientes organicamente.</p>
+          <ul class="serv-list">
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Planejamento mensal</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Design dos posts</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Legendas estratégicas</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Agendamento e publicação</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Monitoramento</li>
+          </ul>
+        </div>
+      </div>
+      <div class="serv-card fu d3">
+        <img class="serv-img" src="https://images.unsplash.com/photo-1536240478700-b869ad10e128?w=600&q=80" alt="Conteúdo">
+        <div class="serv-body">
+          <div class="serv-num">Serviço 03</div>
+          <div class="serv-ico-row">
+            <div class="serv-ico"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg></div>
+            <h3>Produção de Conteúdo</h3>
+          </div>
+          <p>Conteúdo que educa, gera confiança e posiciona o profissional como referência em saúde na sua cidade.</p>
+          <ul class="serv-list">
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Roteiros de Reels</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Copywriting para anúncios</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Conteúdo educativo</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Cases formatados</li>
+            <li><span class="chk"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Identidade visual</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NICHO -->
+<section class="nicho">
+  <div class="container">
+    <div class="section-label fu"><div class="section-label-line"></div><div class="section-label-text">Especialização</div></div>
+    <h2 class="section-title fu">Atendemos clínicas de<br><em>todas as especialidades.</em></h2>
+    <div class="nicho-grid">
+      <div class="nicho-item fu d1"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v1H7a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-2V5a3 3 0 0 0-3-3z"/><path d="M9 12h6M12 9v6"/></svg></div><span>Odontologia</span></div>
+      <div class="nicho-item fu d2"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></div><span>Estética</span></div>
+      <div class="nicho-item fu d3"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg></div><span>Psicologia</span></div>
+      <div class="nicho-item fu d4"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg></div><span>Nutrição</span></div>
+      <div class="nicho-item fu d1"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></div><span>Dermatologia</span></div>
+      <div class="nicho-item fu d2"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div><span>Fisioterapia</span></div>
+      <div class="nicho-item fu d3"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div><span>Oftalmologia</span></div>
+      <div class="nicho-item fu d4"><div class="nicho-ico"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div><span>Cardiologia</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- IMG BREAK -->
+<div class="img-break">
+  <img src="https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=1600&q=80" alt="Clínica">
+  <div class="img-break-overlay">
+    <div class="img-break-line"></div>
+    <div class="img-break-text">Mais cliques. Mais pacientes.<br><span>Mais resultado.</span></div>
+    <div class="img-break-line"></div>
+  </div>
+</div>
+
+<!-- PROCESSO -->
+<section id="processo">
+  <div class="container">
+    <div class="section-label fu"><div class="section-label-line"></div><div class="section-label-text">Como funciona</div></div>
+    <h2 class="section-title fu">Do primeiro contato<br><em>à agenda cheia.</em></h2>
+    <div class="processo-steps">
+      <div class="processo-connector"></div>
+      <div class="step fu d1">
+        <div class="step-circle" data-num="1">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        </div>
+        <h3>Diagnóstico</h3>
+        <p>Entendemos sua clínica, público, metas e o que já foi tentado antes.</p>
+      </div>
+      <div class="step fu d2">
+        <div class="step-circle" data-num="2">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+        </div>
+        <h3>Estratégia</h3>
+        <p>Montamos o plano: canais, verbas, campanhas e calendário de conteúdo.</p>
+      </div>
+      <div class="step fu d3">
+        <div class="step-circle" data-num="3">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/></svg>
+        </div>
+        <h3>Execução</h3>
+        <p>Anúncios no ar, perfil otimizado, conteúdo publicado e tudo rodando.</p>
+      </div>
+      <div class="step fu d4">
+        <div class="step-circle" data-num="4">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+        </div>
+        <h3>Resultado</h3>
+        <p>Acompanhamento semanal e relatório mensal com números reais.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PACOTES -->
+<section id="pacotes" class="pacotes">
+  <div class="container">
+    <div class="section-label fu"><div class="section-label-line"></div><div class="section-label-text">Investimento</div></div>
+    <h2 class="section-title fu">Escolha o plano certo<br><em>para sua clínica.</em></h2>
+    <p class="section-sub fu">Todos os planos incluem contrato mensal, relatório e suporte via WhatsApp.</p>
+    <div class="pacotes-grid">
+      <div class="pk-card fu d1">
+        <div class="pk-name">Essencial</div>
+        <div class="pk-desc">Para clínicas que querem começar com presença digital sólida.</div>
+        <div class="pk-price">R$2.500<span>/mês</span></div>
+        <div class="pk-period">Contrato mensal renovável</div>
+        <div class="pk-divider"></div>
+        <ul class="pk-list">
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Gestão do Instagram</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>12 posts por mês</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Criação de conteúdo</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Legendas e hashtags</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Relatório mensal</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Suporte WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/5567920011563?text=Quero%20o%20Pacote%20Essencial." class="pk-btn pk-outline" target="_blank">Quero esse plano</a>
+      </div>
+      <div class="pk-card featured fu d2">
+        <div class="pk-badge">
+          <svg width="11" height="11" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          Mais popular
+        </div>
+        <div class="pk-name">Crescimento</div>
+        <div class="pk-desc">Para clínicas prontas para crescer com tráfego pago.</div>
+        <div class="pk-price">R$4.000<span>/mês</span></div>
+        <div class="pk-period">Contrato mensal renovável</div>
+        <div class="pk-divider"></div>
+        <ul class="pk-list">
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Tudo do Essencial</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Campanhas Meta Ads</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Verba R$1.000 inclusa</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Criativos para anúncios</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Otimização semanal</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>WhatsApp integrado</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Relatório semanal</li>
+        </ul>
+        <a href="https://wa.me/5567920011563?text=Quero%20o%20Pacote%20Crescimento." class="pk-btn pk-filled" target="_blank">Quero esse plano</a>
+      </div>
+      <div class="pk-card fu d3">
+        <div class="pk-name">Autoridade</div>
+        <div class="pk-desc">Para clínicas que querem dominar a busca na cidade.</div>
+        <div class="pk-price">R$6.500<span>/mês</span></div>
+        <div class="pk-period">Contrato mensal renovável</div>
+        <div class="pk-divider"></div>
+        <ul class="pk-list">
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Tudo do Crescimento</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Google Ads</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Produção de Reels</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Estratégia de autoridade local</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Google Meu Negócio</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Funil de captação completo</li>
+          <li><span class="pk-check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>Reunião estratégica mensal</li>
+        </ul>
+        <a href="https://wa.me/5567920011563?text=Quero%20o%20Pacote%20Autoridade." class="pk-btn pk-outline" target="_blank">Quero esse plano</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MANIFESTO -->
+<section id="manifesto" class="manifesto">
+  <div class="manifesto-bg"></div>
+  <div class="container">
+    <div class="manifesto-inner">
+      <div class="manifesto-eyebrow fu">
+        <div class="manifesto-eyebrow-line"></div>
+        <div class="manifesto-eyebrow-text">Nosso manifesto</div>
+        <div class="manifesto-eyebrow-line"></div>
+      </div>
+      <div class="manifesto-quote fu">"Sua clínica é boa.<br><strong>O problema é que ninguém sabe."</strong></div>
+      <div class="manifesto-divider fu"></div>
+      <div class="manifesto-body fu">
+        <p>Você estudou anos. Montou uma estrutura. Contratou equipe. Atende bem. Mas a agenda continua com buraco. O telefone não toca como deveria.</p>
+        <p>No mundo de hoje, o melhor profissional não é quem mais aparece no boca a boca. É quem aparece na tela certa, para a pessoa certa, na hora certa.</p>
+        <p>Enquanto você espera indicação, seu concorrente está anunciando. Enquanto você posta foto de feriado, ele está enchendo a agenda. Enquanto você pensa em começar o marketing um dia, ele está fechando os pacientes que deveriam ser seus.</p>
+        <p>A Cliqmed existe para acabar com isso. Não fazemos post bonitinho. Não gerenciamos curtida. Fazemos uma coisa só: <strong>colocamos pacientes na sua agenda.</strong></p>
+      </div>
+      <div class="manifesto-sign fu">Cliqmed Agency — 2026</div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+  <div class="cta-bg"></div>
+  <div class="cta-overlay"></div>
+  <div class="container">
+    <div class="cta-inner">
+      <div class="section-label fu" style="justify-content:center;"><div class="section-label-line"></div><div class="section-label-text">Pronto para crescer?</div><div class="section-label-line"></div></div>
+      <h2 class="fu">Vamos encher sua<br><em>agenda juntos.</em></h2>
+      <p class="fu">Fale agora com a Cliqmed pelo WhatsApp. Sem compromisso, sem enrolação — só resultado.</p>
+      <a class="cta-wpp fu" href="https://wa.me/5567920011563?text=Olá!%20Quero%20encher%20a%20agenda%20da%20minha%20clínica%20com%20a%20Cliqmed." target="_blank">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+        Falar com a Cliqmed agora
+      </a>
+      <div class="cta-note fu">Resposta em até 1 hora nos dias úteis</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">Cliq<span>med</span></div>
+    <ul class="footer-links">
+      <li><a href="#servicos">Serviços</a></li>
+      <li><a href="#pacotes">Pacotes</a></li>
+      <li><a href="#processo">Como funciona</a></li>
+      <li><a href="https://wa.me/5567920011563" target="_blank">WhatsApp</a></li>
+    </ul>
+    <div class="footer-copy">© 2026 Cliqmed. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+<!-- WPP FLOAT -->
+<a class="wpp-float" href="https://wa.me/5567920011563?text=Olá!%20Vim%20pelo%20site%20da%20Cliqmed." target="_blank" title="WhatsApp">
+  <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>document.getElementById('nav').classList.toggle('scrolled',scrollY>60));
+
+// Fade up
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show');});
+},{threshold:0.1});
+document.querySelectorAll('.fu').forEach(el=>obs.observe(el));
+
+// Smooth scroll
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const t=document.querySelector(a.getAttribute('href'));
+    if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth'});}
+  });
+});
+</script>
+</body>
+</html>
