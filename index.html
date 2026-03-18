@@ -205,7 +205,8 @@ nav.scrolled{
   display:flex;align-items:center;gap:10px;
   text-decoration:none;
 }
-.nav-logo-mark{width:34px;height:34px;flex-shrink:0;}
+.nav-logo-mark{height:44px;width:auto;flex-shrink:0;object-fit:contain;}
+.nav-wordmark{display:none;}
 .nav-wordmark{
   font-family:'Montserrat',sans-serif;
   font-size:20px;font-weight:800;
@@ -238,8 +239,8 @@ nav.scrolled{
   nav{padding:14px 20px;justify-content:center;}
   nav.scrolled{padding:10px 20px;}
   .nav-links,.nav-cta{display:none;}
-  .nav-logo-mark{width:30px;height:30px;}
-  .nav-wordmark{font-size:18px;}
+  .nav-logo-mark{height:36px;width:auto;}
+  .nav-wordmark{display:none;}
 }
 
 /* HERO */
@@ -882,15 +883,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
 <!-- NAV -->
 <nav id="nav">
   <a href="#" class="nav-logo">
-    <svg class="nav-logo-mark" viewBox="0 0 64 64" fill="none">
-      <rect width="64" height="64" rx="8" fill="rgba(0,180,162,0.12)"/>
-      <rect x="26" y="12" width="12" height="40" rx="4" fill="#00B4A2"/>
-      <rect x="12" y="26" width="40" height="12" rx="4" fill="#00B4A2"/>
-      <circle cx="47" cy="47" r="9" fill="#06101e"/>
-      <path d="M43 44L51 44L47 51L45.5 47.5L43 44Z" fill="#00D4BF"/>
-      <circle cx="47" cy="47" r="8.5" stroke="#00B4A2" stroke-width="1" fill="none"/>
-    </svg>
-    <span class="nav-wordmark">Cliq<span>med</span></span>
+    <img src="https://res.cloudinary.com/dmdaiwkyl/image/upload/v1773858857/2_nc4ice.png" class="nav-logo-mark" alt="Cliqmed Logo">
   </a>
   <ul class="nav-links">
     <li><a href="#servicos">Serviços</a></li>
@@ -1290,7 +1283,7 @@ footer{background:var(--navy);border-top:1px solid rgba(255,255,255,0.05);paddin
 <!-- FOOTER -->
 <footer>
   <div class="footer-inner">
-    <div class="footer-logo">Cliq<span>med</span></div>
+    <img src="https://res.cloudinary.com/dmdaiwkyl/image/upload/v1773858857/2_nc4ice.png" style="height:36px;width:auto;object-fit:contain;" alt="Cliqmed">
     <ul class="footer-links">
       <li><a href="#servicos">Serviços</a></li>
       <li><a href="#pacotes">Pacotes</a></li>
