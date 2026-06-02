@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Anuncie com Jackson Ribeiro — 15 milhões de visualizações por mês</title>
+<meta name="description" content="Sua marca para mais de 15 milhões de visualizações mensais. Pacote especial para pequenos empreendedores brasileiros nos EUA.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0d0b;
+    --bg-2:#11150f;
+    --ink:#f3eee2;
+    --ink-dim:#a8a698;
+    --accent:#d4ff3a;
+    --accent-2:#1a4d2e;
+    --line:rgba(243,238,226,0.12);
+    --serif:'Instrument Serif', serif;
+    --sans:'Manrope', sans-serif;
+    --mono:'JetBrains Mono', monospace;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-weight:400;
+    line-height:1.5;
+    overflow-x:hidden;
+    -webkit-font-smoothing:antialiased;
+  }
+  body::before{
+    content:'';
+    position:fixed;inset:0;
+    background-image:
+      radial-gradient(at 20% 10%, rgba(212,255,58,0.06) 0%, transparent 45%),
+      radial-gradient(at 80% 80%, rgba(26,77,46,0.25) 0%, transparent 50%);
+    pointer-events:none;z-index:0;
+  }
+  body::after{
+    content:'';
+    position:fixed;inset:0;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+    opacity:0.04;pointer-events:none;z-index:1;mix-blend-mode:overlay;
+  }
+  main{position:relative;z-index:2}
+
+  /* NAV */
+  nav{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    padding:20px 40px;
+    display:flex;justify-content:space-between;align-items:center;
+    backdrop-filter:blur(12px);
+    background:rgba(10,13,11,0.6);
+    border-bottom:1px solid var(--line);
+  }
+  .logo{font-family:var(--serif);font-size:22px;font-style:italic;letter-spacing:-0.5px}
+  .logo span{color:var(--accent)}
+  .nav-cta{
+    font-family:var(--mono);font-size:12px;
+    text-transform:uppercase;letter-spacing:1px;
+    color:var(--bg);background:var(--accent);
+    padding:10px 18px;border-radius:100px;
+    text-decoration:none;transition:transform .2s;
+  }
+  .nav-cta:hover{transform:translateY(-2px)}
+
+  /* HERO */
+  .hero{
+    min-height:100vh;
+    padding:140px 40px 80px;
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:60px;
+    align-items:center;
+    position:relative;
+  }
+  .hero-tag{
+    font-family:var(--mono);font-size:11px;
+    text-transform:uppercase;letter-spacing:2.5px;
+    color:var(--accent);
+    margin-bottom:30px;
+    display:flex;align-items:center;gap:12px;
+  }
+  .hero-tag::before{
+    content:'';width:30px;height:1px;background:var(--accent);
+  }
+  .hero h1{
+    font-family:var(--serif);
+    font-size:clamp(56px,8vw,120px);
+    line-height:0.95;
+    font-weight:400;
+    letter-spacing:-2px;
+    margin-bottom:30px;
+  }
+  .hero h1 em{
+    font-style:italic;color:var(--accent);
+    display:block;
+  }
+  .hero-sub{
+    font-size:18px;color:var(--ink-dim);
+    max-width:480px;margin-bottom:40px;
+    line-height:1.6;
+  }
+  .hero-sub strong{color:var(--ink);font-weight:600}
+  .hero-cta-row{display:flex;gap:16px;flex-wrap:wrap;align-items:center}
+  .btn-primary{
+    background:var(--accent);color:var(--bg);
+    padding:18px 32px;border-radius:100px;
+    text-decoration:none;font-weight:700;
+    font-size:15px;
+    display:inline-flex;align-items:center;gap:10px;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .btn-primary:hover{
+    transform:translateY(-3px);
+    box-shadow:0 12px 40px rgba(212,255,58,0.3);
+  }
+  .btn-ghost{
+    color:var(--ink);padding:18px 24px;
+    text-decoration:none;font-size:14px;
+    font-family:var(--mono);text-transform:uppercase;
+    letter-spacing:1.5px;
+    border-bottom:1px solid var(--line);
+  }
+  .hero-img-wrap{
+    position:relative;
+    aspect-ratio:4/5;
+    max-width:520px;
+    justify-self:end;
+    width:100%;
+  }
+  .hero-img-wrap::before{
+    content:'';position:absolute;inset:-2px;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    border-radius:8px;z-index:0;
+    transform:rotate(-2deg);
+  }
+  .hero-img{
+    position:relative;z-index:1;
+    width:100%;height:100%;
+    object-fit:cover;
+    border-radius:6px;
+    filter:contrast(1.05) saturate(1.1);
+  }
+  .hero-badge{
+    position:absolute;bottom:-20px;left:-20px;
+    background:var(--bg);
+    border:1px solid var(--accent);
+    padding:16px 22px;border-radius:100px;
+    font-family:var(--mono);font-size:12px;
+    z-index:2;
+    text-transform:uppercase;letter-spacing:1.5px;
+  }
+  .hero-badge span{color:var(--accent)}
+
+  /* SECTIONS */
+  section{padding:120px 40px;position:relative}
+  .container{max-width:1280px;margin:0 auto}
+  .label{
+    font-family:var(--mono);font-size:11px;
+    text-transform:uppercase;letter-spacing:2.5px;
+    color:var(--accent);
+    display:flex;align-items:center;gap:12px;
+    margin-bottom:24px;
+  }
+  .label::before{content:'';width:30px;height:1px;background:var(--accent)}
+  h2{
+    font-family:var(--serif);
+    font-size:clamp(40px,6vw,80px);
+    line-height:1;font-weight:400;
+    letter-spacing:-1.5px;
+    margin-bottom:30px;
+  }
+  h2 em{font-style:italic;color:var(--accent)}
+
+  /* ABOUT */
+  .about{
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .about-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;
+  }
+  .about p{
+    font-size:20px;line-height:1.6;
+    color:var(--ink-dim);
+  }
+  .about p + p{margin-top:20px}
+  .about-roles{
+    display:flex;flex-wrap:wrap;gap:8px;margin-top:30px;
+  }
+  .role-pill{
+    border:1px solid var(--line);
+    padding:8px 16px;border-radius:100px;
+    font-size:13px;font-family:var(--mono);
+    color:var(--ink-dim);
+  }
+
+  /* STATS */
+  .stats{background:var(--bg-2)}
+  .stats-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    border:1px solid var(--line);
+    border-radius:4px;overflow:hidden;
+    margin-top:60px;
+  }
+  .stat{
+    padding:50px 30px;
+    border-right:1px solid var(--line);
+    position:relative;
+    transition:background .3s;
+  }
+  .stat:last-child{border-right:none}
+  .stat:hover{background:rgba(212,255,58,0.04)}
+  .stat-num{
+    font-family:var(--serif);
+    font-size:clamp(48px,5.5vw,80px);
+    line-height:1;
+    margin-bottom:12px;
+    letter-spacing:-2px;
+  }
+  .stat-num em{font-style:italic;color:var(--accent)}
+  .stat-label{
+    font-size:13px;color:var(--ink-dim);
+    font-family:var(--mono);text-transform:uppercase;
+    letter-spacing:1px;line-height:1.5;
+  }
+
+  /* OFFER */
+  .offer{
+    border-top:1px solid var(--line);
+  }
+  .offer-card{
+    display:grid;grid-template-columns:1.1fr 1fr;
+    border:1px solid var(--line);
+    border-radius:8px;overflow:hidden;
+    margin-top:60px;
+    background:linear-gradient(135deg,var(--bg-2),var(--bg));
+  }
+  .offer-left{
+    padding:60px 50px;
+    border-right:1px solid var(--line);
+    position:relative;
+  }
+  .offer-tag{
+    display:inline-block;
+    font-family:var(--mono);font-size:11px;
+    color:var(--accent);text-transform:uppercase;
+    letter-spacing:2px;border:1px solid var(--accent);
+    padding:6px 14px;border-radius:100px;
+    margin-bottom:24px;
+  }
+  .price{
+    font-family:var(--serif);
+    font-size:120px;line-height:0.9;
+    letter-spacing:-4px;
+    margin:20px 0;
+  }
+  .price-currency{
+    font-size:32px;vertical-align:top;
+    margin-right:6px;color:var(--accent);
+  }
+  .price-period{
+    display:block;
+    font-family:var(--mono);font-size:13px;
+    color:var(--ink-dim);text-transform:uppercase;
+    letter-spacing:2px;margin-top:8px;
+  }
+  .offer-desc{
+    color:var(--ink-dim);font-size:16px;
+    line-height:1.6;margin-bottom:30px;
+  }
+  .offer-right{padding:60px 50px}
+  .offer-right h3{
+    font-family:var(--serif);font-size:32px;
+    font-weight:400;margin-bottom:30px;
+    letter-spacing:-0.5px;
+  }
+  .feature-list{list-style:none}
+  .feature-list li{
+    display:flex;align-items:flex-start;gap:14px;
+    padding:14px 0;border-bottom:1px solid var(--line);
+    font-size:16px;
+  }
+  .feature-list li:last-child{border:none}
+  .feature-list svg{
+    flex-shrink:0;margin-top:3px;
+    color:var(--accent);
+  }
+
+  /* IDEAL */
+  .ideal{background:var(--bg-2)}
+  .ideal-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    margin-top:50px;
+  }
+  .ideal-item{
+    background:var(--bg-2);
+    padding:30px 24px;
+    display:flex;align-items:center;gap:14px;
+    transition:background .3s;
+    font-size:16px;
+  }
+  .ideal-item:hover{background:var(--bg)}
+  .ideal-num{
+    font-family:var(--serif);font-style:italic;
+    color:var(--accent);font-size:24px;
+  }
+
+  /* WHY */
+  .why-grid{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;
+    align-items:center;
+  }
+  .why-text p{
+    font-size:22px;line-height:1.5;
+    color:var(--ink-dim);
+  }
+  .why-text p + p{margin-top:20px}
+  .why-text em{
+    font-family:var(--serif);font-style:italic;
+    color:var(--ink);font-size:1.1em;
+  }
+  .why-quote{
+    border-left:3px solid var(--accent);
+    padding:30px 40px;
+    font-family:var(--serif);font-style:italic;
+    font-size:32px;line-height:1.3;
+    background:var(--bg-2);
+    border-radius:0 8px 8px 0;
+  }
+
+  /* SOCIAL */
+  .social{
+    background:var(--bg-2);
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+  }
+  .social-grid{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    gap:20px;margin-top:50px;
+  }
+  .social-card{
+    border:1px solid var(--line);
+    padding:30px;border-radius:8px;
+    text-decoration:none;color:var(--ink);
+    transition:all .3s;
+    display:block;
+  }
+  .social-card:hover{
+    border-color:var(--accent);
+    transform:translateY(-4px);
+    background:rgba(212,255,58,0.03);
+  }
+  .social-icon{
+    width:36px;height:36px;
+    margin-bottom:20px;color:var(--accent);
+  }
+  .social-name{
+    font-family:var(--mono);font-size:11px;
+    text-transform:uppercase;letter-spacing:1.5px;
+    color:var(--ink-dim);margin-bottom:6px;
+  }
+  .social-handle{
+    font-family:var(--serif);font-size:22px;
+  }
+
+  /* CTA */
+  .cta{
+    text-align:center;
+    padding:140px 40px;
+    position:relative;
+  }
+  .cta::before{
+    content:'';position:absolute;inset:0;
+    background:radial-gradient(circle at center, rgba(212,255,58,0.08) 0%, transparent 60%);
+    pointer-events:none;
+  }
+  .cta h2{margin-bottom:24px}
+  .cta-sub{
+    font-size:20px;color:var(--ink-dim);
+    max-width:600px;margin:0 auto 50px;
+  }
+  .cta-warning{
+    font-family:var(--mono);font-size:12px;
+    color:var(--accent);text-transform:uppercase;
+    letter-spacing:2px;margin-bottom:30px;
+  }
+  .whatsapp-btn{
+    display:inline-flex;align-items:center;gap:14px;
+    background:var(--accent);color:var(--bg);
+    padding:24px 44px;border-radius:100px;
+    text-decoration:none;font-weight:700;font-size:18px;
+    transition:transform .2s,box-shadow .2s;
+  }
+  .whatsapp-btn:hover{
+    transform:translateY(-4px);
+    box-shadow:0 20px 50px rgba(212,255,58,0.35);
+  }
+  .phone{
+    margin-top:24px;font-family:var(--mono);
+    font-size:14px;color:var(--ink-dim);
+  }
+
+  /* FOOTER */
+  footer{
+    padding:40px;border-top:1px solid var(--line);
+    text-align:center;
+    font-family:var(--mono);font-size:12px;
+    color:var(--ink-dim);
+    text-transform:uppercase;letter-spacing:1.5px;
+  }
+
+  /* Marquee */
+  .marquee{
+    overflow:hidden;
+    border-top:1px solid var(--line);
+    border-bottom:1px solid var(--line);
+    background:var(--accent);
+    color:var(--bg);
+    padding:18px 0;
+  }
+  .marquee-track{
+    display:flex;gap:60px;
+    animation:scroll 30s linear infinite;
+    white-space:nowrap;
+    font-family:var(--serif);font-style:italic;
+    font-size:24px;
+  }
+  @keyframes scroll{
+    from{transform:translateX(0)}
+    to{transform:translateX(-50%)}
+  }
+  .marquee-track span::before{
+    content:'✦';margin-right:60px;
+  }
+
+  /* Mobile */
+  @media (max-width:900px){
+    nav{padding:16px 20px}
+    .hero{
+      grid-template-columns:1fr;
+      padding:120px 20px 60px;
+      gap:50px;
+    }
+    .hero-img-wrap{justify-self:start;max-width:100%}
+    section{padding:80px 20px}
+    .about-grid,.why-grid{grid-template-columns:1fr;gap:40px}
+    .stats-grid{grid-template-columns:repeat(2,1fr)}
+    .stat{border-right:none;border-bottom:1px solid var(--line)}
+    .stat:nth-child(odd){border-right:1px solid var(--line)}
+    .stat:nth-last-child(-n+2){border-bottom:none}
+    .offer-card{grid-template-columns:1fr}
+    .offer-left,.offer-right{padding:40px 30px}
+    .offer-left{border-right:none;border-bottom:1px solid var(--line)}
+    .price{font-size:80px}
+    .social-grid{grid-template-columns:1fr 1fr}
+    .why-quote{font-size:22px;padding:24px 28px}
+    .nav-cta{display:none}
+  }
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(30px);transition:opacity .8s,transform .8s}
+  .reveal.in{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">Jackson<span>.</span>Ribeiro</div>
+  <a href="#contato" class="nav-cta">Falar no WhatsApp</a>
+</nav>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div>
+    <div class="hero-tag">Anuncie com Jackson Ribeiro</div>
+    <h1>Sua marca em<br><em>15 milhões</em>de telas.</h1>
+    <p class="hero-sub">A maior audiência <strong>brasileira nos Estados Unidos</strong> agora ao alcance do seu negócio. Sem milhares de dólares. Sem complicação.</p>
+    <div class="hero-cta-row">
+      <a href="#contato" class="btn-primary">
+        Garantir minha vaga
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+      </a>
+      <a href="#oferta" class="btn-ghost">Ver oferta</a>
+    </div>
+  </div>
+  <div class="hero-img-wrap">
+    <img class="hero-img" src="https://res.cloudinary.com/dmdaiwkyl/image/upload/v1780442119/ChatGPT_Image_2_de_jun._de_2026_19_10_51_swt8m2.png" alt="Jackson Ribeiro">
+    <div class="hero-badge"><span>●</span> 700K+ seguidores</div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>15 milhões de visualizações/mês</span>
+    <span>700 mil seguidores</span>
+    <span>Comunidade Brasileira nos EUA</span>
+    <span>US$ 500/mês</span>
+    <span>Vagas limitadas</span>
+    <span>15 milhões de visualizações/mês</span>
+    <span>700 mil seguidores</span>
+    <span>Comunidade Brasileira nos EUA</span>
+    <span>US$ 500/mês</span>
+    <span>Vagas limitadas</span>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="about reveal">
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <div class="label">Quem é</div>
+        <h2>Jornalista,<br>publicitário<br><em>e criador.</em></h2>
+      </div>
+      <div>
+        <p>Forte presença digital e audiência consolidada entre brasileiros vivendo nos Estados Unidos e no Brasil.</p>
+        <p>Mais do que números — uma <em style="color:var(--ink);font-family:var(--serif);font-style:italic">comunidade real</em>, que escuta, confia e age.</p>
+        <div class="about-roles">
+          <span class="role-pill">Jornalista</span>
+          <span class="role-pill">Publicitário</span>
+          <span class="role-pill">Criador de Conteúdo</span>
+          <span class="role-pill">Brasileiros nos EUA</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section class="stats reveal">
+  <div class="container">
+    <div class="label">Números que geram resultados</div>
+    <h2>A audiência<br>em <em>números reais.</em></h2>
+    <div class="stats-grid">
+      <div class="stat">
+        <div class="stat-num"><em>700</em>K+</div>
+        <div class="stat-label">Seguidores somados nas redes</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>15</em>M</div>
+        <div class="stat-label">Visualizações mensais</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>3.75</em>M</div>
+        <div class="stat-label">Visualizações semanais</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num"><em>20</em>K+</div>
+        <div class="stat-label">Visualizações diárias nos Stories</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section class="offer reveal" id="oferta">
+  <div class="container">
+    <div class="label">Pacote especial</div>
+    <h2>Para o<br>pequeno <em>empreendedor.</em></h2>
+    <div class="offer-card">
+      <div class="offer-left">
+        <span class="offer-tag">Oferta limitada</span>
+        <p class="offer-desc">Visibilidade real sem investir milhares de dólares em publicidade. Contrato mensal — sem amarras.</p>
+        <div class="price">
+          <span class="price-currency">US$</span>500
+          <span class="price-period">por mês</span>
+        </div>
+        <a href="#contato" class="btn-primary">
+          Quero esta vaga
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="offer-right">
+        <h3>O que está incluso</h3>
+        <ul class="feature-list">
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            <span><strong>2 Stories</strong> por semana</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            <span><strong>8 Stories</strong> por mês</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            <span><strong>1 vídeo Reels</strong> por mês</span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            <span>Divulgação em <strong>todas as redes</strong></span>
+          </li>
+          <li>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M5 12l5 5L20 7"/></svg>
+            <span><strong>Contrato mensal</strong> — sem fidelidade</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- IDEAL -->
+<section class="ideal reveal">
+  <div class="container">
+    <div class="label">Ideal para</div>
+    <h2>Feito para quem<br>quer <em>crescer.</em></h2>
+    <div class="ideal-grid">
+      <div class="ideal-item"><span class="ideal-num">01</span> Corretores de imóveis</div>
+      <div class="ideal-item"><span class="ideal-num">02</span> Seguros</div>
+      <div class="ideal-item"><span class="ideal-num">03</span> Advogados</div>
+      <div class="ideal-item"><span class="ideal-num">04</span> Contadores</div>
+      <div class="ideal-item"><span class="ideal-num">05</span> Clínicas & saúde</div>
+      <div class="ideal-item"><span class="ideal-num">06</span> Restaurantes</div>
+      <div class="ideal-item"><span class="ideal-num">07</span> Empresas de limpeza</div>
+      <div class="ideal-item"><span class="ideal-num">08</span> Prestadores de serviço</div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY -->
+<section class="reveal">
+  <div class="container">
+    <div class="label">Por que anunciar comigo</div>
+    <div class="why-grid">
+      <div class="why-text">
+        <h2 style="margin-bottom:40px">Mais que<br>views — <em>resultados.</em></h2>
+        <p>Sua marca apresentada a uma audiência <em>real</em>, formada por brasileiros que vivem, trabalham ou desejam viver nos Estados Unidos.</p>
+        <p>Não é só visualização. É reconhecimento, credibilidade e <em>novos clientes</em>.</p>
+      </div>
+      <div class="why-quote">
+        "Meu objetivo é ajudar empresas e profissionais a conquistarem mais visibilidade — sem precisar investir milhares de dólares."
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SOCIAL -->
+<section class="social reveal">
+  <div class="container">
+    <div class="label">Redes sociais</div>
+    <h2>Onde a audiência<br><em>já está.</em></h2>
+    <div class="social-grid">
+      <a href="https://instagram.com/jacksonn.ribeiro" target="_blank" class="social-card">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="18" cy="6" r="1" fill="currentColor"/></svg>
+        <div class="social-name">Instagram</div>
+        <div class="social-handle">@jacksonn.ribeiro</div>
+      </a>
+      <a href="https://tiktok.com/@jacksonn.ribeiro" target="_blank" class="social-card">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.8 20.1a6.34 6.34 0 0 0 10.86-4.43V8.91a8.16 8.16 0 0 0 4.77 1.52V7a4.85 4.85 0 0 1-1.84-.31z"/></svg>
+        <div class="social-name">TikTok</div>
+        <div class="social-handle">@jacksonn.ribeiro</div>
+      </a>
+      <a href="https://facebook.com/jacksonn.ribeiro" target="_blank" class="social-card">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.05V9.41c0-3.02 1.79-4.69 4.53-4.69 1.31 0 2.69.24 2.69.24v2.97h-1.52c-1.49 0-1.96.93-1.96 1.89v2.26h3.33l-.53 3.49h-2.8V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
+        <div class="social-name">Facebook</div>
+        <div class="social-handle">@jacksonn.ribeiro</div>
+      </a>
+      <a href="https://youtube.com/@jacksonribeiro" target="_blank" class="social-card">
+        <svg class="social-icon" viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8zM9.6 15.6V8.4l6.2 3.6-6.2 3.6z"/></svg>
+        <div class="social-name">YouTube</div>
+        <div class="social-handle">Jackson Ribeiro</div>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta reveal" id="contato">
+  <div class="container">
+    <div class="cta-warning">● Vagas limitadas — atenção garantida a cada anunciante</div>
+    <h2>Vamos colocar sua marca<br>nas <em>telas certas?</em></h2>
+    <p class="cta-sub">Fale diretamente comigo pelo WhatsApp e verifique a disponibilidade da sua vaga.</p>
+    <a href="https://wa.me/13213645235?text=Ol%C3%A1%20Jackson!%20Quero%20saber%20mais%20sobre%20o%20pacote%20de%20an%C3%BAncios." target="_blank" class="whatsapp-btn">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M.057 24l1.687-6.163a11.867 11.867 0 0 1-1.587-5.946C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 0 1 8.413 3.488 11.824 11.824 0 0 1 3.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 0 1-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 0 0 1.51 5.26l.6.952-1 3.648 3.737-.98z"/></svg>
+      Falar no WhatsApp agora
+    </a>
+    <div class="phone">+1 (321) 364-5235</div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  © Jackson Ribeiro — Todos os direitos reservados
+</footer>
+
+<script>
+  // Reveal animation
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }});
+  },{threshold:0.1});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
