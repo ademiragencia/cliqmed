@@ -1,0 +1,79 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 96px;
+  }
+  body {
+    @apply bg-bg text-ink font-body antialiased;
+  }
+  ::selection {
+    @apply bg-teal/25 text-ink;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-bg;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-teal/60 rounded-full;
+  }
+  :focus-visible {
+    @apply outline-2 outline-offset-2 outline-teal rounded-sm;
+  }
+}
+
+@layer components {
+  .container-site {
+    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full bg-teal px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-deep-darker transition-all duration-300 hover:bg-teal-dark hover:text-white hover:-translate-y-0.5 hover:shadow-glow;
+  }
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-ink/15 px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-ink transition-all duration-300 hover:border-teal hover:text-teal-deep hover:-translate-y-0.5;
+  }
+  .chip {
+    @apply inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-teal-deep;
+  }
+  .chip-dark {
+    @apply inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/15 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-teal;
+  }
+  .heading-xl {
+    @apply font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl;
+  }
+  .heading-lg {
+    @apply font-display text-3xl font-extrabold leading-[1.08] tracking-tight md:text-5xl;
+  }
+  .card {
+    @apply rounded-3xl border border-line bg-surface shadow-soft;
+  }
+}
+
+@keyframes toastIn {
+  0%, 55% { opacity: 0; transform: translateY(14px) scale(0.96); }
+  62%, 93% { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-8px) scale(0.98); }
+}
+@keyframes toastIn2 {
+  0%, 10% { opacity: 0; transform: translateY(14px) scale(0.96); }
+  17%, 48% { opacity: 1; transform: translateY(0) scale(1); }
+  55%, 100% { opacity: 0; transform: translateY(-8px) scale(0.98); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}

@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://cliqmed.com.br/sitemap.xml
