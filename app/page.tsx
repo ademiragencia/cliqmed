@@ -39,7 +39,7 @@ export default function Home() {
       />
       <Navbar hasCustomLogo={hasCustomLogo} />
       <main>
-        <Hero hasCustomLogo={hasCustomLogo} />
+        <Hero />
         <Diferenciais />
         <Servicos />
         <Vistos />

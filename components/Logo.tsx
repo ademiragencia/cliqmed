@@ -1,25 +1,14 @@
 type Variant = "dark" | "light";
 
 /**
- * Logo original enviada pelo cliente. Basta existir o arquivo
- * public/logo.png no repositório para o site usá-la no lugar da
- * recriação vetorial (a detecção acontece em app/page.tsx).
- * Em fundos escuros ela é exibida sobre um cartão branco.
+ * Logo original enviada pelo cliente (public/logo.png): versão branca
+ * com fundo transparente, própria para os fundos azul-marinho do site.
+ * A detecção do arquivo acontece em app/page.tsx.
  */
-export function CustomLogo({
-  onDark = false,
-  className,
-}: {
-  onDark?: boolean;
-  className?: string;
-}) {
+export function CustomLogo({ className }: { className?: string }) {
   return (
     /* eslint-disable-next-line @next/next/no-img-element */
-    <img
-      src="/logo.png"
-      alt="BlueVisa"
-      className={`${onDark ? "rounded-xl bg-white p-1.5" : ""} ${className ?? ""}`}
-    />
+    <img src="/logo.png" alt="BlueVisa" className={className} />
   );
 }
 

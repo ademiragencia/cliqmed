@@ -16,7 +16,7 @@ export default function Footer({ hasCustomLogo = false }: { hasCustomLogo?: bool
         <div className="grid gap-12 md:grid-cols-[1.2fr_0.8fr_1fr]">
           <div>
             {hasCustomLogo ? (
-              <CustomLogo onDark className="h-16 w-auto" />
+              <CustomLogo className="h-28 w-auto" />
             ) : (
               <BrandLogo variant="light" markClass="h-12 w-12" typeClass="text-2xl" />
             )}

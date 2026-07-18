@@ -8,7 +8,7 @@ function Logo({ custom }: { custom: boolean }) {
   return (
     <a href="#inicio" aria-label="BlueVisa, voltar ao início">
       {custom ? (
-        <CustomLogo onDark className="h-14 w-auto" />
+        <CustomLogo className="h-16 w-auto" />
       ) : (
         <BrandLogo variant="light" markClass="h-11 w-11" typeClass="text-2xl" />
       )}
