@@ -78,7 +78,7 @@ const businessSchema = {
   logo: SITE_URL + "/logo.png",
   image: SITE_URL + "/og.png",
   telephone: "+5567981082158",
-  email: "contato@bluevisausa.com",
+  email: "bluevisausa@gmail.com",
   areaServed: { "@type": "Country", name: "Brasil" },
   makesOffer: [
     {

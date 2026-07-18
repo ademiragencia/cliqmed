@@ -70,10 +70,10 @@ export default function Footer({ hasCustomLogo = false }: { hasCustomLogo?: bool
               </li>
               <li>
                 <a
-                  href="mailto:contato@bluevisausa.com"
+                  href="mailto:bluevisausa@gmail.com"
                   className="font-display text-sm font-semibold text-white/70 transition-colors hover:text-white"
                 >
-                  contato@bluevisausa.com
+                  bluevisausa@gmail.com
                 </a>
               </li>
               <li className="text-sm text-white/50">Atendimento 100% online para o Brasil inteiro</li>
