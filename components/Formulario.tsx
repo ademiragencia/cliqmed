@@ -12,6 +12,7 @@ const TIPOS_VISTO = [
   "Trabalho (H, L, O, P)",
   "Noivo(a) (K1)",
   "Investidor (E1/E2)",
+  "Imigração (EB-1 / EB-2 NIW)",
   "Ainda não sei",
 ];
 
@@ -61,23 +62,31 @@ export default function Formulario() {
   const labelCls =
     "font-display text-xs font-bold uppercase tracking-[0.14em] text-muted";
   const fieldCls =
-    "mt-2 w-full rounded-2xl border border-line bg-white px-5 py-3.5 font-medium text-ink outline-none transition-colors focus:border-blue";
+    "mt-2 w-full rounded-2xl border border-line bg-bg px-5 py-3.5 font-medium text-ink outline-none transition-colors focus:border-blue";
 
   return (
-    <section className="bg-white py-24 md:py-32" id="comecar">
-      <div className="container-site grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
+    <section className="relative overflow-hidden bg-deep-darker py-24 md:py-32" id="comecar">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(800px 500px at 15% 10%, rgba(45,156,219,0.18), transparent 70%), radial-gradient(600px 400px at 95% 90%, rgba(45,156,219,0.10), transparent 70%)",
+        }}
+      />
+      <div className="container-site relative grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <Reveal>
-            <span className="chip">Formulário de qualificação</span>
+            <span className="chip-dark">Formulário de qualificação</span>
           </Reveal>
           <Reveal delay={0.08}>
-            <h2 className="heading-lg mt-5">
+            <h2 className="heading-lg mt-5 text-white">
               Conte o seu objetivo.{" "}
-              <span className="text-blue-deep">A gente cuida do resto.</span>
+              <span className="text-blue">A gente cuida do resto.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="mt-5 text-lg leading-relaxed text-muted">
+            <p className="mt-5 text-lg leading-relaxed text-white/65">
               Responda rapidinho e fale direto com a nossa equipe no WhatsApp.
               Você recebe o diagnóstico gratuito do seu perfil, a indicação do
               visto certo e do plano ideal. Sem compromisso.
@@ -91,8 +100,8 @@ export default function Formulario() {
                 "Resposta rápida nos dias úteis",
                 "Sem compromisso e sem custo",
               ].map((t) => (
-                <li key={t} className="flex items-center gap-3 font-medium">
-                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue/15 text-blue-deep">
+                <li key={t} className="flex items-center gap-3 font-medium text-white/90">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-blue/20 text-blue">
                     <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
                       <polyline points="20 6 9 17 4 12" />
                     </svg>
@@ -105,7 +114,7 @@ export default function Formulario() {
         </div>
 
         <Reveal delay={0.15}>
-          <form onSubmit={submit} className="rounded-3xl border border-line bg-bg p-8 shadow-soft md:p-10">
+          <form onSubmit={submit} className="rounded-3xl bg-white p-8 shadow-lift md:p-10">
             <div className="grid gap-6 sm:grid-cols-2">
               <div>
                 <label className={labelCls} htmlFor="nome">

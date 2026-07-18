@@ -38,7 +38,9 @@ export default function Vistos() {
                     Assessoria a partir de
                   </div>
                   <div className="mt-1 flex items-baseline gap-1">
-                    <span className="font-display text-sm font-bold text-muted">R$</span>
+                    <span className="font-display text-sm font-bold text-muted">
+                      {v.moeda ?? "R$"}
+                    </span>
                     <span className="font-display text-3xl font-extrabold tracking-tight">
                       {v.preco}
                     </span>
@@ -100,7 +102,9 @@ export default function Vistos() {
         <Reveal delay={0.2}>
           <p className="mt-10 text-center text-sm text-muted">
             Valores de assessoria por processo e por pessoa. As taxas do governo
-            americano são pagas por você diretamente aos órgãos oficiais.
+            americano são pagas por você diretamente aos órgãos oficiais. Nos
+            processos de imigração (EB-1 e EB-2 NIW), o trabalho jurídico é
+            conduzido com advogados parceiros licenciados nos EUA.
           </p>
         </Reveal>
       </div>

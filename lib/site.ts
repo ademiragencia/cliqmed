@@ -21,6 +21,7 @@ export type Visto = {
   nome: string;
   desc: string;
   preco: string;
+  moeda?: "R$" | "US$";
   taxa: string;
   cta: string;
 };
@@ -81,6 +82,24 @@ export const VISTOS: Visto[] = [
     preco: "4.997",
     taxa: "Taxa consular: US$ 315",
     cta: wa("Olá! Quero assessoria para o visto de investidor (E1/E2)."),
+  },
+  {
+    sigla: "EB-1",
+    nome: "Imigração por talento",
+    desc: "Green Card para profissionais com habilidade extraordinária na sua área.",
+    preco: "9.000",
+    moeda: "US$",
+    taxa: "Taxas do governo (USCIS)",
+    cta: wa("Olá! Quero assessoria para o processo de imigração EB-1."),
+  },
+  {
+    sigla: "EB-2 NIW",
+    nome: "Interesse Nacional",
+    desc: "Green Card por interesse nacional, sem necessidade de oferta de emprego.",
+    preco: "9.000",
+    moeda: "US$",
+    taxa: "Taxas do governo (USCIS)",
+    cta: wa("Olá! Quero assessoria para o processo de imigração EB-2 NIW."),
   },
 ];
 
@@ -170,7 +189,7 @@ export const FAQS = [
   },
   {
     q: "Quais tipos de visto vocês atendem?",
-    a: "Todos os principais vistos americanos: turismo e negócios (B1/B2), renovação, estudante (F1/M1), intercâmbio (J1), trabalho (H, L, O e P), noivo(a) (K1) e investidor (E1/E2). Cada tipo tem um processo e um valor de assessoria específicos. Se você não sabe qual é o seu caso, o diagnóstico gratuito identifica o visto certo para o seu objetivo.",
+    a: "Todos os principais vistos americanos: turismo e negócios (B1/B2), renovação, estudante (F1/M1), intercâmbio (J1), trabalho (H, L, O e P), noivo(a) (K1), investidor (E1/E2) e os processos de imigração EB-1 e EB-2 NIW (Green Card). Cada tipo tem um processo e um valor de assessoria específicos. Se você não sabe qual é o seu caso, o diagnóstico gratuito identifica o visto certo para o seu objetivo.",
   },
   {
     q: "O atendimento é presencial?",
