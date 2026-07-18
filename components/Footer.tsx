@@ -1,5 +1,5 @@
 import { NAV_LINKS, WA_DEFAULT } from "@/lib/site";
-import BrandLogo from "./Logo";
+import BrandLogo, { CustomLogo } from "./Logo";
 
 const FUTURO = [
   "Seguro viagem",
@@ -9,13 +9,17 @@ const FUTURO = [
   "Planejamento de viagens aos EUA",
 ];
 
-export default function Footer() {
+export default function Footer({ hasCustomLogo = false }: { hasCustomLogo?: boolean }) {
   return (
     <footer className="bg-deep-darker py-16 text-white">
       <div className="container-site">
         <div className="grid gap-12 md:grid-cols-[1.2fr_0.8fr_1fr]">
           <div>
-            <BrandLogo variant="light" markClass="h-12 w-12" typeClass="text-2xl" />
+            {hasCustomLogo ? (
+              <CustomLogo onDark className="h-16 w-auto" />
+            ) : (
+              <BrandLogo variant="light" markClass="h-12 w-12" typeClass="text-2xl" />
+            )}
             <p className="mt-2 text-sm text-white/55">Seu sonho americano começa aqui.</p>
             <p className="mt-6 max-w-sm text-xs leading-relaxed text-white/40">
               Em breve na BlueVisa:{" "}

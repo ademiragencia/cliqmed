@@ -1,3 +1,5 @@
+import fs from "node:fs";
+import path from "node:path";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Diferenciais from "@/components/Diferenciais";
@@ -26,15 +28,18 @@ const faqSchema = {
 };
 
 export default function Home() {
+  const hasCustomLogo = fs.existsSync(
+    path.join(process.cwd(), "public", "logo.png")
+  );
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Navbar />
+      <Navbar hasCustomLogo={hasCustomLogo} />
       <main>
-        <Hero />
+        <Hero hasCustomLogo={hasCustomLogo} />
         <Diferenciais />
         <Servicos />
         <Vistos />
@@ -47,7 +52,7 @@ export default function Home() {
         <Faq />
         <CtaFinal />
       </main>
-      <Footer />
+      <Footer hasCustomLogo={hasCustomLogo} />
       <WhatsAppFloat />
     </>
   );

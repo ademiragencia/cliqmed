@@ -2,7 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { WA_DEFAULT } from "@/lib/site";
-import { LogoMark } from "./Logo";
+import { LogoMark, CustomLogo } from "./Logo";
 
 const STARS: Array<[number, number, number]> = [
   [8, 12, 2], [15, 72, 1], [22, 38, 1], [30, 88, 2], [12, 55, 1],
@@ -25,17 +25,21 @@ function Starfield() {
   );
 }
 
-function BoardingPass() {
+function BoardingPass({ custom }: { custom: boolean }) {
   return (
     <div className="group relative mx-auto max-w-3xl -rotate-1 transition-transform duration-500 hover:rotate-0">
       <div className="overflow-hidden rounded-3xl bg-white text-ink shadow-lift md:flex">
         {/* main section */}
         <div className="flex-1 p-7 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-1.5 font-display text-sm font-extrabold tracking-tight">
-              <LogoMark variant="dark" className="h-7 w-7" />
-              Blue<span className="text-blue">Visa</span>
-            </div>
+            {custom ? (
+              <CustomLogo className="h-9 w-auto" />
+            ) : (
+              <div className="flex items-center gap-1.5 font-display text-sm font-extrabold tracking-tight">
+                <LogoMark variant="dark" className="h-7 w-7" />
+                Blue<span className="text-blue">Visa</span>
+              </div>
+            )}
             <div className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-muted">
               Cartão de embarque do seu sonho
             </div>
@@ -114,7 +118,7 @@ function BoardingPass() {
   );
 }
 
-export default function Hero() {
+export default function Hero({ hasCustomLogo = false }: { hasCustomLogo?: boolean }) {
   const reduce = useReducedMotion();
   const fadeUp = (delay: number) => ({
     initial: reduce ? undefined : { opacity: 0, y: 26 },
@@ -196,7 +200,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
         >
-          <BoardingPass />
+          <BoardingPass custom={hasCustomLogo} />
         </motion.div>
 
         <motion.ul

@@ -2,17 +2,21 @@
 
 import { useEffect, useState } from "react";
 import { NAV_LINKS, WA_DIAGNOSTICO } from "@/lib/site";
-import BrandLogo from "./Logo";
+import BrandLogo, { CustomLogo } from "./Logo";
 
-function Logo() {
+function Logo({ custom }: { custom: boolean }) {
   return (
     <a href="#inicio" aria-label="BlueVisa, voltar ao início">
-      <BrandLogo variant="light" markClass="h-11 w-11" typeClass="text-2xl" />
+      {custom ? (
+        <CustomLogo onDark className="h-14 w-auto" />
+      ) : (
+        <BrandLogo variant="light" markClass="h-11 w-11" typeClass="text-2xl" />
+      )}
     </a>
   );
 }
 
-export default function Navbar() {
+export default function Navbar({ hasCustomLogo = false }: { hasCustomLogo?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
@@ -43,7 +47,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="container-site flex items-center justify-between py-5">
-          <Logo />
+          <Logo custom={hasCustomLogo} />
 
           <ul className="hidden items-center gap-9 md:flex">
             {NAV_LINKS.map((l) => (
