@@ -8,7 +8,7 @@ function Logo() {
     <a
       href="#inicio"
       className="flex items-center gap-1.5 font-display text-2xl font-extrabold tracking-tight text-white"
-      aria-label="BlueVisa — início"
+      aria-label="BlueVisa, voltar ao início"
     >
       <svg className="text-blue" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
         <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" transform="rotate(-42 12 12)" />

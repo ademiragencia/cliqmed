@@ -37,8 +37,9 @@ export default function Planos() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              Pagamento único por processo. Todos os planos incluem atendimento
-              100% online e suporte via WhatsApp.
+              Pacotes de acompanhamento com pagamento único por processo, para
+              qualquer tipo de visto. Todos incluem atendimento 100% online e
+              suporte via WhatsApp.
             </p>
           </Reveal>
         </div>
@@ -121,10 +122,10 @@ export default function Planos() {
 
         <Reveal delay={0.2}>
           <p className="mt-10 text-center text-sm text-muted">
-            A taxa consular (US$ 185 para o visto B1/B2) é paga por você
-            diretamente ao governo americano —{" "}
+            As taxas consulares (de US$ 185 a US$ 315, conforme o tipo de
+            visto) são pagas por você diretamente ao governo americano.{" "}
             <strong className="text-ink">
-              nós emitimos a guia e orientamos o pagamento.
+              Nós emitimos as guias e orientamos cada pagamento.
             </strong>
           </p>
         </Reveal>

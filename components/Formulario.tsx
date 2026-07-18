@@ -4,11 +4,22 @@ import { useState } from "react";
 import Reveal from "./Reveal";
 import { wa } from "@/lib/site";
 
-const OBJETIVOS = [
-  "Primeiro visto de turismo (B1/B2)",
+const TIPOS_VISTO = [
+  "Turismo e Negócios (B1/B2)",
   "Renovação de visto",
-  "Visto para a família",
-  "Outro caso",
+  "Estudante (F1/M1)",
+  "Intercâmbio (J1)",
+  "Trabalho (H, L, O, P)",
+  "Noivo(a) (K1)",
+  "Investidor (E1/E2)",
+  "Ainda não sei",
+];
+
+const VIAJANTES = [
+  "Só eu",
+  "2 pessoas",
+  "3 ou mais",
+  "Família com crianças",
 ];
 
 const PRAZOS = [
@@ -18,14 +29,32 @@ const PRAZOS = [
   "Ainda estou planejando",
 ];
 
+const HISTORICO = [
+  "É meu primeiro visto",
+  "Já tive visto americano",
+  "Já tive visto negado",
+];
+
 export default function Formulario() {
   const [nome, setNome] = useState("");
-  const [objetivo, setObjetivo] = useState(OBJETIVOS[0]);
+  const [zap, setZap] = useState("");
+  const [tipo, setTipo] = useState(TIPOS_VISTO[0]);
+  const [viajantes, setViajantes] = useState(VIAJANTES[0]);
   const [prazo, setPrazo] = useState(PRAZOS[0]);
+  const [historico, setHistorico] = useState(HISTORICO[0]);
 
   const submit = (e: React.FormEvent) => {
     e.preventDefault();
-    const msg = `Olá! Meu nome é ${nome.trim() || "—"}. Quero começar minha assessoria com a BlueVisa.\n\n• Objetivo: ${objetivo}\n• Pretendo viajar: ${prazo}`;
+    const msg = [
+      `Olá! Quero começar minha assessoria com a BlueVisa.`,
+      ``,
+      `• Nome: ${nome.trim() || "não informado"}`,
+      `• WhatsApp: ${zap.trim() || "não informado"}`,
+      `• Visto: ${tipo}`,
+      `• Viajantes: ${viajantes}`,
+      `• Quando pretendo viajar: ${prazo}`,
+      `• Histórico: ${historico}`,
+    ].join("\n");
     window.open(wa(msg), "_blank", "noopener");
   };
 
@@ -39,7 +68,7 @@ export default function Formulario() {
       <div className="container-site grid items-center gap-14 lg:grid-cols-2 lg:gap-20">
         <div>
           <Reveal>
-            <span className="chip">Comece agora</span>
+            <span className="chip">Formulário de qualificação</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="heading-lg mt-5">
@@ -49,15 +78,16 @@ export default function Formulario() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              Responda três perguntas rápidas e fale direto com a nossa equipe
-              no WhatsApp. Você recebe o diagnóstico gratuito do seu perfil e a
-              indicação do plano ideal — sem compromisso.
+              Responda rapidinho e fale direto com a nossa equipe no WhatsApp.
+              Você recebe o diagnóstico gratuito do seu perfil, a indicação do
+              visto certo e do plano ideal. Sem compromisso.
             </p>
           </Reveal>
           <Reveal delay={0.24}>
             <ul className="mt-8 space-y-3.5">
               {[
                 "Diagnóstico gratuito do seu perfil",
+                "Indicação do visto certo para o seu caso",
                 "Resposta rápida nos dias úteis",
                 "Sem compromisso e sem custo",
               ].map((t) => (
@@ -76,49 +106,98 @@ export default function Formulario() {
 
         <Reveal delay={0.15}>
           <form onSubmit={submit} className="rounded-3xl border border-line bg-bg p-8 shadow-soft md:p-10">
-            <div>
-              <label className={labelCls} htmlFor="nome">
-                Seu nome
-              </label>
-              <input
-                id="nome"
-                type="text"
-                required
-                placeholder="Como podemos te chamar?"
-                value={nome}
-                onChange={(e) => setNome(e.target.value)}
-                className={fieldCls}
-              />
+            <div className="grid gap-6 sm:grid-cols-2">
+              <div>
+                <label className={labelCls} htmlFor="nome">
+                  Seu nome
+                </label>
+                <input
+                  id="nome"
+                  type="text"
+                  required
+                  placeholder="Como podemos te chamar?"
+                  value={nome}
+                  onChange={(e) => setNome(e.target.value)}
+                  className={fieldCls}
+                />
+              </div>
+              <div>
+                <label className={labelCls} htmlFor="zap">
+                  Seu WhatsApp
+                </label>
+                <input
+                  id="zap"
+                  type="tel"
+                  required
+                  placeholder="(00) 90000-0000"
+                  value={zap}
+                  onChange={(e) => setZap(e.target.value)}
+                  className={fieldCls}
+                />
+              </div>
             </div>
 
             <div className="mt-6">
-              <label className={labelCls} htmlFor="objetivo">
-                Qual é o seu caso?
+              <label className={labelCls} htmlFor="tipo">
+                Qual visto você precisa?
               </label>
               <select
-                id="objetivo"
-                value={objetivo}
-                onChange={(e) => setObjetivo(e.target.value)}
+                id="tipo"
+                value={tipo}
+                onChange={(e) => setTipo(e.target.value)}
                 className={fieldCls}
               >
-                {OBJETIVOS.map((o) => (
+                {TIPOS_VISTO.map((o) => (
                   <option key={o}>{o}</option>
                 ))}
               </select>
             </div>
 
+            <div className="mt-6 grid gap-6 sm:grid-cols-2">
+              <div>
+                <label className={labelCls} htmlFor="viajantes">
+                  Quantas pessoas?
+                </label>
+                <select
+                  id="viajantes"
+                  value={viajantes}
+                  onChange={(e) => setViajantes(e.target.value)}
+                  className={fieldCls}
+                >
+                  {VIAJANTES.map((o) => (
+                    <option key={o}>{o}</option>
+                  ))}
+                </select>
+              </div>
+              <div>
+                <label className={labelCls} htmlFor="prazo">
+                  Quando pretende viajar?
+                </label>
+                <select
+                  id="prazo"
+                  value={prazo}
+                  onChange={(e) => setPrazo(e.target.value)}
+                  className={fieldCls}
+                >
+                  {PRAZOS.map((p) => (
+                    <option key={p}>{p}</option>
+                  ))}
+                </select>
+              </div>
+            </div>
+
             <div className="mt-6">
-              <label className={labelCls} htmlFor="prazo">
-                Quando pretende viajar?
+              <label className={labelCls} htmlFor="historico">
+                Seu histórico com vistos
               </label>
               <select
-                id="prazo"
-                value={prazo}
-                onChange={(e) => setPrazo(e.target.value)}
+                id="historico"
+                value={historico}
+                onChange={(e) => setHistorico(e.target.value)}
                 className={fieldCls}
               >
-                {PRAZOS.map((p) => (
-                  <option key={p}>{p}</option>
+                {HISTORICO.map((h) => (
+                  <option key={h}>{h}</option>
                 ))}
               </select>
             </div>
@@ -131,7 +210,7 @@ export default function Formulario() {
             </button>
             <p className="mt-4 text-center text-xs text-muted">
               Você será direcionado ao WhatsApp oficial da BlueVisa com a sua
-              mensagem pronta.
+              mensagem pronta. Seus dados não são armazenados por este site.
             </p>
           </form>
         </Reveal>

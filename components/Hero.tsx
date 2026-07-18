@@ -94,12 +94,12 @@ function BoardingPass() {
           <div className="flex items-center justify-between gap-6 md:h-full md:flex-col md:items-start md:justify-between">
             <div>
               <div className="font-display text-[10px] font-bold uppercase tracking-[0.18em] text-muted">
-                Visto
+                Vistos
               </div>
               <div className="font-display text-3xl font-extrabold tracking-tight text-blue-deep">
-                B1/B2
+                EUA
               </div>
-              <div className="mt-0.5 text-xs font-medium text-muted">Turismo & negócios</div>
+              <div className="mt-0.5 text-xs font-medium text-muted">Todos os tipos</div>
             </div>
             <svg className="h-12 w-28 text-ink md:w-full" viewBox="0 0 120 48" aria-hidden>
               {[0, 5, 9, 15, 20, 23, 29, 34, 40, 44, 50, 56, 60, 67, 71, 77, 84, 88, 95, 100, 105, 111, 116].map(
@@ -163,9 +163,10 @@ export default function Hero() {
             {...fadeUp(0.16)}
           >
             A BlueVisa cuida da burocracia para que você foque na sua viagem.
-            Documentação, DS-160, agendamento e preparação para a entrevista —{" "}
+            Documentação, formulários, agendamento e preparação para a
+            entrevista, em todos os tipos de visto.{" "}
             <strong className="font-semibold text-white">
-              tudo 100% online, do início ao fim.
+              Tudo 100% online, do início ao fim.
             </strong>
           </motion.p>
 

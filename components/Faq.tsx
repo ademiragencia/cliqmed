@@ -76,8 +76,7 @@ export default function Faq() {
               className="font-display font-bold text-blue-deep underline decoration-blue/40 underline-offset-4 transition-colors hover:text-blue"
             >
               Pergunte no WhatsApp
-            </a>{" "}
-            — respondemos sem compromisso.
+            </a>, respondemos sem compromisso.
           </p>
         </Reveal>
       </div>

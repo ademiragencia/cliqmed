@@ -4,7 +4,7 @@ const SERVICES = [
   {
     num: "01",
     title: "Análise do perfil",
-    text: "Entendemos seu histórico e seu objetivo de viagem antes de qualquer formulário — cada caso é um caso.",
+    text: "Entendemos seu histórico e seu objetivo antes de qualquer formulário, e indicamos o visto certo. Cada caso é um caso.",
   },
   {
     num: "02",
@@ -13,8 +13,8 @@ const SERVICES = [
   },
   {
     num: "03",
-    title: "DS-160 sem erros",
-    text: "O formulário mais temido do processo, preenchido e revisado por quem faz isso todos os dias.",
+    title: "Formulários sem erros",
+    text: "Do DS-160 aos formulários de cada categoria de visto, tudo preenchido e revisado por quem faz isso todos os dias.",
   },
   {
     num: "04",
@@ -49,8 +49,9 @@ export default function Servicos() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              Acompanhamos você do início ao fim do processo: documentação,
-              formulários, agendamento e preparação para a entrevista.
+              Acompanhamos você do início ao fim do processo, em qualquer tipo
+              de visto: documentação, formulários, agendamento e preparação
+              para a entrevista.
             </p>
           </Reveal>
           <Reveal delay={0.24}>

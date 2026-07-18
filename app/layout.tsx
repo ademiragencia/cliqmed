@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: "BlueVisa | Assessoria para Visto Americano 100% Online",
   description:
-    "Seu visto americano, sem complicação. A BlueVisa cuida do DS-160, da guia de pagamento, do agendamento e da preparação para a entrevista — assessoria 100% online, do início ao fim.",
+    "Seu visto americano, sem complicação. Assessoria 100% online para todos os tipos de visto: turismo (B1/B2), estudante (F1), intercâmbio (J1), trabalho, noivo(a) (K1) e investidor. Do DS-160 à preparação para a entrevista.",
   keywords: [
     "assessoria visto americano",
     "como tirar visto americano",
@@ -31,6 +31,11 @@ export const metadata: Metadata = {
     "visto B1 B2",
     "renovação de visto americano",
     "visto americano para família",
+    "visto de estudante F1",
+    "visto de intercâmbio J1",
+    "visto de trabalho EUA",
+    "visto de noivo K1",
+    "visto de investidor E2",
   ],
   authors: [{ name: "BlueVisa" }],
   robots: { index: true, follow: true, "max-image-preview": "large" },
@@ -42,7 +47,7 @@ export const metadata: Metadata = {
     locale: "pt_BR",
     title: "BlueVisa | Assessoria para Visto Americano 100% Online",
     description:
-      "Seu sonho americano começa aqui. Cuidamos da burocracia do visto — DS-160, agendamento e preparação para a entrevista — para você focar na viagem.",
+      "Seu sonho americano começa aqui. Cuidamos da burocracia de todos os tipos de visto americano para você focar na viagem.",
   },
   twitter: {
     card: "summary_large_image",
@@ -62,11 +67,11 @@ const businessSchema = {
   alternateName: "BlueVisa Assessoria de Vistos Americanos",
   slogan: "Seu sonho americano começa aqui.",
   description:
-    "Assessoria particular e independente para vistos americanos: análise de perfil, preenchimento do DS-160, agendamento e preparação para a entrevista. Orientação administrativa, sem vínculo com o governo dos EUA e sem garantia de aprovação.",
+    "Assessoria particular e independente para todos os tipos de visto americano: turismo (B1/B2), estudante (F1/M1), intercâmbio (J1), trabalho, noivo(a) (K1) e investidor (E1/E2). Orientação administrativa, sem vínculo com o governo dos EUA e sem garantia de aprovação.",
   url: SITE_URL + "/",
   telephone: "+5567981082158",
   email: "contato@bluevisausa.com",
-  priceRange: "R$697 - R$2.990",
+  priceRange: "R$597 - R$4.997",
   areaServed: { "@type": "Country", name: "Brasil" },
   makesOffer: [
     {

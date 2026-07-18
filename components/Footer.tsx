@@ -1,11 +1,10 @@
 import { NAV_LINKS, WA_DEFAULT } from "@/lib/site";
 
 const FUTURO = [
-  "Renovação de vistos",
-  "Vistos de estudo e negócios",
   "Seguro viagem",
   "Câmbio",
   "Chip internacional",
+  "Passagens e hospedagem",
   "Planejamento de viagens aos EUA",
 ];
 
@@ -77,7 +76,7 @@ export default function Footer() {
                   contato@bluevisausa.com
                 </a>
               </li>
-              <li className="text-sm text-white/50">Atendimento 100% online — Brasil inteiro</li>
+              <li className="text-sm text-white/50">Atendimento 100% online para o Brasil inteiro</li>
             </ul>
           </div>
         </div>
@@ -87,7 +86,7 @@ export default function Footer() {
             A BlueVisa é uma empresa privada de assessoria e orientação
             administrativa para processos de visto americano. Não temos vínculo
             com o governo dos Estados Unidos, com a embaixada ou com os
-            consulados americanos, e não garantimos a aprovação do visto — a
+            consulados americanos, e não garantimos a aprovação do visto. A
             decisão é exclusiva das autoridades consulares. As taxas
             governamentais são pagas diretamente aos órgãos oficiais.
           </p>

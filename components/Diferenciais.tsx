@@ -46,7 +46,7 @@ const ITEMS = [
   },
   {
     title: "Atendimento multicanal",
-    text: "WhatsApp, e-mail e videochamada — você escolhe como falar.",
+    text: "WhatsApp, e-mail e videochamada. Você escolhe como falar.",
     icon: (
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
         <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
@@ -83,7 +83,7 @@ export default function Diferenciais() {
             <Reveal delay={0.16}>
               <p className="mt-5 text-lg leading-relaxed text-muted">
                 Nossa missão é tornar a obtenção do visto americano um processo
-                tranquilo — com atendimento especializado, tecnologia e zero
+                tranquilo, com atendimento especializado, tecnologia e zero
                 enrolação.
               </p>
             </Reveal>

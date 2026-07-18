@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     title: "Diagnóstico gratuito",
-    text: "Uma conversa pelo WhatsApp para entender seu perfil e indicar o plano ideal. Sem custo, sem compromisso.",
+    text: "Uma conversa pelo WhatsApp para entender seu perfil e indicar o visto e o plano ideais. Sem custo, sem compromisso.",
   },
   {
     title: "Onboarding",
@@ -11,15 +11,15 @@ const STEPS = [
   },
   {
     title: "Execução do processo",
-    text: "Nossa equipe preenche o DS-160, emite a guia de pagamento da taxa e agenda a sua entrevista.",
+    text: "Nossa equipe preenche os formulários do seu visto, emite a guia de pagamento da taxa e agenda a sua entrevista.",
   },
   {
     title: "Preparação para a entrevista",
-    text: "Orientações completas — e, nos planos com simulação, um treino por videochamada para o grande dia.",
+    text: "Orientações completas e, nos planos com simulação, um treino por videochamada para o grande dia.",
   },
   {
     title: "Dia da entrevista",
-    text: "Você comparece ao consulado preparado e confiante. A decisão é do oficial consular — e acompanhamos você até o resultado.",
+    text: "Você comparece ao consulado preparado e confiante. A decisão é do oficial consular, e acompanhamos você até o resultado.",
   },
 ];
 
@@ -77,7 +77,7 @@ export default function Jornada() {
                   <h3 className="font-display text-xl font-bold text-white">Boa viagem!</h3>
                   <p className="mt-2 leading-relaxed text-white/60">
                     Com o visto no passaporte, é só embarcar. E seguimos por
-                    perto no pós-atendimento — para renovações e as próximas
+                    perto no pós-atendimento, para renovações e as próximas
                     viagens da família.
                   </p>
                 </div>

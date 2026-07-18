@@ -2,6 +2,7 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Diferenciais from "@/components/Diferenciais";
 import Servicos from "@/components/Servicos";
+import Vistos from "@/components/Vistos";
 import Jornada from "@/components/Jornada";
 import MissaoValores from "@/components/MissaoValores";
 import Planos from "@/components/Planos";
@@ -36,12 +37,13 @@ export default function Home() {
         <Hero />
         <Diferenciais />
         <Servicos />
+        <Vistos />
         <Jornada />
         <Planos />
+        <Formulario />
         <Depoimentos />
         <MissaoValores />
         <Transparencia />
-        <Formulario />
         <Faq />
         <CtaFinal />
       </main>

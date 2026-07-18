@@ -36,7 +36,7 @@ export default function CtaFinal() {
               </h2>
               <p className="mx-auto mt-5 max-w-xl text-lg leading-relaxed text-white/70">
                 Preencha o formulário de qualificação ou chame direto no
-                WhatsApp. O diagnóstico do seu perfil é gratuito — e a burocracia
+                WhatsApp. O diagnóstico do seu perfil é gratuito, e a burocracia
                 fica com a gente.
               </p>
               <div className="mt-10 flex flex-wrap justify-center gap-4">

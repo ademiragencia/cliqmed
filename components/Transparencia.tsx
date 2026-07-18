@@ -41,9 +41,9 @@ export default function Transparencia() {
                   administrativa.{" "}
                   <strong className="font-semibold text-white">
                     Não temos vínculo com o governo dos Estados Unidos e nenhuma
-                    empresa pode garantir a aprovação do visto
+                    empresa pode garantir a aprovação do visto.
                   </strong>{" "}
-                  — a decisão é exclusiva do oficial consular. Nosso compromisso
+                  A decisão é exclusiva do oficial consular. Nosso compromisso
                   é preparar você tão bem que a burocracia deixe de ser um
                   obstáculo.
                 </p>
