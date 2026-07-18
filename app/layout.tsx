@@ -48,15 +48,21 @@ export const metadata: Metadata = {
     title: "BlueVisa | Assessoria para Visto Americano 100% Online",
     description:
       "Seu sonho americano começa aqui. Cuidamos da burocracia de todos os tipos de visto americano para você focar na viagem.",
+    images: ["/og.png"],
   },
   twitter: {
     card: "summary_large_image",
     title: "BlueVisa | Assessoria para Visto Americano",
     description: "Seu visto americano, sem complicação. Assessoria 100% online.",
+    images: ["/og.png"],
   },
   icons: {
     icon: [{ url: "/favicon.svg", type: "image/svg+xml" }],
   },
+};
+
+export const viewport = {
+  themeColor: "#061529",
 };
 
 const businessSchema = {
@@ -69,6 +75,8 @@ const businessSchema = {
   description:
     "Assessoria particular e independente para todos os tipos de visto americano: turismo e negócios (B1/B2), renovação, estudante (F1/M1), intercâmbio (J1), trabalho (H, L, O, P), noivo(a) (K1), investidor (E1/E2) e imigração (EB-1 e EB-2 NIW). Orientação administrativa, sem vínculo com o governo dos EUA e sem garantia de aprovação.",
   url: SITE_URL + "/",
+  logo: SITE_URL + "/logo.png",
+  image: SITE_URL + "/og.png",
   telephone: "+5567981082158",
   email: "contato@bluevisausa.com",
   areaServed: { "@type": "Country", name: "Brasil" },

@@ -9,14 +9,15 @@ export const WA_DEFAULT = wa("Olá! Vim pelo site da BlueVisa e quero saber mais
 export const WA_DIAGNOSTICO = wa("Olá! Quero o diagnóstico gratuito do meu perfil com a BlueVisa.");
 
 export const NAV_LINKS = [
-  { href: "#servicos", label: "Serviços" },
-  { href: "#vistos", label: "Vistos" },
-  { href: "#jornada", label: "Como funciona" },
-  { href: "#planos", label: "Planos" },
-  { href: "#faq", label: "FAQ" },
+  { href: "/#servicos", label: "Serviços" },
+  { href: "/#vistos", label: "Vistos" },
+  { href: "/#jornada", label: "Como funciona" },
+  { href: "/#planos", label: "Planos" },
+  { href: "/#faq", label: "FAQ" },
 ];
 
 export type Visto = {
+  slug: string;
   sigla: string;
   nome: string;
   desc: string;
@@ -27,6 +28,7 @@ export type Visto = {
 export const VISTOS: Visto[] = [
   {
     sigla: "B1/B2",
+    slug: "turismo",
     nome: "Turismo e Negócios",
     desc: "O visto mais procurado pelos brasileiros, com validade de até 10 anos. Permite turismo, visitas, compras, eventos e reuniões de negócios nos Estados Unidos.",
     pontos: [
@@ -38,6 +40,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "B1/B2",
+    slug: "renovacao",
     nome: "Renovação de visto",
     desc: "Para quem já teve visto americano e precisa renovar. Em muitos casos o processo dispensa nova entrevista, com envio dos documentos sem ir ao consulado.",
     pontos: [
@@ -49,6 +52,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "F1/M1",
+    slug: "estudante",
     nome: "Estudante",
     desc: "Para estudar nos EUA: cursos de inglês, high school, graduação, pós-graduação e cursos técnicos, com matrícula em instituição aprovada pelo governo americano.",
     pontos: [
@@ -60,6 +64,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "J1",
+    slug: "intercambio",
     nome: "Intercâmbio",
     desc: "Para programas de intercâmbio cultural aprovados, como au pair, summer work, treinamentos e pesquisa acadêmica, sempre com um patrocinador credenciado.",
     pontos: [
@@ -71,6 +76,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "H/L/O/P",
+    slug: "trabalho",
     nome: "Trabalho",
     desc: "Para quem tem oferta de trabalho, transferência ou carreira de destaque nos EUA. Cada categoria tem regras próprias e exige petição aprovada pelo USCIS.",
     pontos: [
@@ -82,6 +88,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "K1",
+    slug: "noivo",
     nome: "Noivo(a)",
     desc: "Para quem vai se casar com cidadão americano nos Estados Unidos. O processo começa com a petição do noivo americano e o casamento acontece em até 90 dias após a chegada.",
     pontos: [
@@ -93,6 +100,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "E1/E2",
+    slug: "investidor",
     nome: "Investidor",
     desc: "Para empreendedores e investidores de países com tratado comercial com os EUA que compram ou abrem um negócio no país e vão administrá-lo de perto.",
     pontos: [
@@ -104,6 +112,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "EB-1",
+    slug: "eb1",
     nome: "Imigração por talento",
     desc: "Green Card para quem se destaca em ciências, artes, educação, negócios ou esportes. Reconhece a habilidade extraordinária e dispensa oferta de emprego.",
     pontos: [
@@ -115,6 +124,7 @@ export const VISTOS: Visto[] = [
   },
   {
     sigla: "EB-2 NIW",
+    slug: "eb2-niw",
     nome: "Interesse Nacional",
     desc: "Green Card por interesse nacional, para profissionais qualificados cujo trabalho beneficia os Estados Unidos. Dispensa oferta de emprego e patrocinador.",
     pontos: [
