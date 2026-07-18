@@ -3,6 +3,30 @@
 import { useEffect, useState } from "react";
 import { NAV_LINKS, WA_DIAGNOSTICO } from "@/lib/site";
 
+function Logo() {
+  return (
+    <a
+      href="#inicio"
+      className="flex items-center gap-1 font-display text-2xl font-extrabold tracking-tight"
+      aria-label="BlueVisa — início"
+    >
+      <span>
+        Blue<span className="text-blue">Visa</span>
+      </span>
+      <svg
+        className="-mt-1 text-blue"
+        width="18"
+        height="18"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        aria-hidden
+      >
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" transform="rotate(-42 12 12)" />
+      </svg>
+    </a>
+  );
+}
+
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -34,9 +58,7 @@ export default function Navbar() {
         }`}
       >
         <nav className="container-site flex items-center justify-between py-4">
-          <a href="#inicio" className="font-display text-2xl font-extrabold tracking-tight">
-            cliqmed<span className="text-teal">.</span>
-          </a>
+          <Logo />
 
           <ul className="hidden items-center gap-8 md:flex">
             {NAV_LINKS.map((l) => (
@@ -55,7 +77,7 @@ export default function Navbar() {
             href={WA_DIAGNOSTICO}
             target="_blank"
             rel="noopener"
-            className="hidden rounded-full bg-ink px-6 py-3 font-display text-sm font-bold text-white transition-all hover:bg-teal-dark hover:shadow-glow md:inline-flex"
+            className="hidden rounded-full bg-ink px-6 py-3 font-display text-sm font-bold text-white transition-all hover:bg-blue-dark hover:shadow-glow md:inline-flex"
           >
             Diagnóstico gratuito
           </a>

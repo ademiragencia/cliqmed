@@ -48,10 +48,10 @@ function Counter({
 }
 
 const STATS = [
-  { target: 312, prefix: "+", suffix: "%", decimals: 0, label: "de aumento médio de pacientes novos em 90 dias" },
-  { target: 3.4, suffix: "x", decimals: 1, label: "de retorno médio sobre o investimento em anúncios" },
-  { target: 11, prefix: "R$ ", decimals: 0, label: "de custo médio por lead qualificado na saúde" },
-  { target: 94, suffix: "%", decimals: 0, label: "das clínicas renovam o contrato após o 3º mês" },
+  { target: 100, suffix: "%", decimals: 0, label: "do processo online — você não sai de casa em nenhuma etapa" },
+  { target: 10, suffix: " anos", decimals: 0, label: "de validade do visto de turismo americano (B1/B2)" },
+  { target: 4, decimals: 0, label: "planos sob medida, para cada perfil e momento de viagem" },
+  { target: 3, decimals: 0, label: "canais de atendimento: WhatsApp, e-mail e videochamada" },
 ];
 
 export default function Stats() {
@@ -62,13 +62,13 @@ export default function Stats() {
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(500px 300px at 20% 0%, rgba(0,180,162,0.14), transparent 70%), radial-gradient(500px 300px at 85% 100%, rgba(0,180,162,0.10), transparent 70%)",
+            "radial-gradient(500px 300px at 20% 0%, rgba(45,156,219,0.16), transparent 70%), radial-gradient(500px 300px at 85% 100%, rgba(45,156,219,0.10), transparent 70%)",
         }}
       />
       <div className="container-site relative grid grid-cols-2 gap-x-6 gap-y-12 lg:grid-cols-4">
         {STATS.map((s) => (
           <div key={s.label} className="text-center lg:text-left">
-            <div className="font-display text-5xl font-extrabold tracking-tight text-teal md:text-6xl">
+            <div className="font-display text-5xl font-extrabold tracking-tight text-blue md:text-6xl">
               <Counter {...s} />
             </div>
             <p className="mx-auto mt-3 max-w-[220px] text-sm leading-relaxed text-white/60 lg:mx-0">

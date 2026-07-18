@@ -8,30 +8,30 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        bg: "#F6FAF9",
+        bg: "#F5F9FC",
         surface: "#FFFFFF",
-        ink: "#0A211D",
-        muted: "#5C6F6A",
-        line: "#E2ECE9",
-        teal: {
-          DEFAULT: "#00B4A2",
-          dark: "#00907F",
-          deep: "#007D6F",
+        ink: "#0A2342",
+        muted: "#51617A",
+        line: "#DFE9F2",
+        blue: {
+          DEFAULT: "#2D9CDB",
+          dark: "#1E7FB8",
+          deep: "#15618F",
         },
         deep: {
-          DEFAULT: "#062E28",
-          darker: "#04211D",
+          DEFAULT: "#0A2342",
+          darker: "#061529",
         },
-        amber: "#FFB547",
+        amber: "#F2B84B",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 2px 20px rgba(10, 33, 29, 0.06)",
-        lift: "0 20px 50px -12px rgba(10, 33, 29, 0.18)",
-        glow: "0 8px 40px rgba(0, 180, 162, 0.35)",
+        soft: "0 2px 20px rgba(10, 35, 66, 0.06)",
+        lift: "0 20px 50px -12px rgba(10, 35, 66, 0.18)",
+        glow: "0 8px 40px rgba(45, 156, 219, 0.35)",
       },
       keyframes: {
         marquee: {

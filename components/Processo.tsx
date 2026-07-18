@@ -3,23 +3,23 @@ import Reveal from "./Reveal";
 const STEPS = [
   {
     num: "1",
-    title: "Diagnóstico",
-    text: "Uma conversa de 30–45 min para entender sua clínica, seu público e o que já foi tentado. Grátis, sem compromisso.",
+    title: "Diagnóstico gratuito",
+    text: "Uma conversa pelo WhatsApp para entender seu perfil e seu objetivo de viagem. Sem custo, sem compromisso.",
   },
   {
     num: "2",
-    title: "Estratégia",
-    text: "Montamos o plano: canais, verba, campanhas e calendário de conteúdo — específicos para a sua especialidade e região.",
+    title: "Onboarding",
+    text: "Você entra no portal do cliente, recebe o checklist personalizado e organizamos juntos toda a documentação.",
   },
   {
     num: "3",
     title: "Execução",
-    text: "Anúncios no ar, perfil otimizado, conteúdo publicado. Tudo feito pela nossa equipe, sem tomar o seu tempo.",
+    text: "Nossa equipe preenche o DS-160, emite a guia de pagamento da taxa e agenda a sua entrevista no consulado.",
   },
   {
     num: "4",
-    title: "Crescimento",
-    text: "Otimização semanal e relatório com números reais. O que funciona escala; o que não funciona sai.",
+    title: "Entrevista",
+    text: "Você chega preparado: orientações completas e, nos planos Premium, Family e VIP, simulação da entrevista.",
   },
 ];
 
@@ -33,8 +33,8 @@ export default function Processo() {
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="heading-lg mt-5">
-              Do primeiro contato à{" "}
-              <span className="text-teal-deep">agenda cheia.</span>
+              Do primeiro contato ao{" "}
+              <span className="text-blue-deep">dia da entrevista.</span>
             </h2>
           </Reveal>
         </div>
@@ -42,12 +42,12 @@ export default function Processo() {
         <div className="relative mt-16 grid gap-10 md:grid-cols-4 md:gap-6">
           <div
             aria-hidden
-            className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px bg-gradient-to-r from-teal/10 via-teal/50 to-teal/10 md:block"
+            className="absolute left-[12.5%] right-[12.5%] top-7 hidden h-px bg-gradient-to-r from-blue/10 via-blue/50 to-blue/10 md:block"
           />
           {STEPS.map((s, i) => (
             <Reveal key={s.num} delay={i * 0.1}>
               <div className="relative text-center md:px-2">
-                <div className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-deep font-display text-xl font-extrabold text-teal shadow-lift">
+                <div className="relative z-10 mx-auto flex h-14 w-14 items-center justify-center rounded-2xl bg-deep font-display text-xl font-extrabold text-blue shadow-lift">
                   {s.num}
                 </div>
                 <h3 className="mt-5 font-display text-xl font-bold">{s.title}</h3>

@@ -11,7 +11,7 @@
     @apply bg-bg text-ink font-body antialiased;
   }
   ::selection {
-    @apply bg-teal/25 text-ink;
+    @apply bg-blue/25 text-ink;
   }
   ::-webkit-scrollbar {
     width: 6px;
@@ -20,10 +20,10 @@
     @apply bg-bg;
   }
   ::-webkit-scrollbar-thumb {
-    @apply bg-teal/60 rounded-full;
+    @apply bg-blue/60 rounded-full;
   }
   :focus-visible {
-    @apply outline-2 outline-offset-2 outline-teal rounded-sm;
+    @apply outline-2 outline-offset-2 outline-blue rounded-sm;
   }
 }
 
@@ -32,16 +32,16 @@
     @apply mx-auto w-full max-w-6xl px-5 md:px-8;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full bg-teal px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-deep-darker transition-all duration-300 hover:bg-teal-dark hover:text-white hover:-translate-y-0.5 hover:shadow-glow;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full bg-blue px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-white transition-all duration-300 hover:bg-blue-dark hover:-translate-y-0.5 hover:shadow-glow;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-ink/15 px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-ink transition-all duration-300 hover:border-teal hover:text-teal-deep hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-ink/15 px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-ink transition-all duration-300 hover:border-blue hover:text-blue-deep hover:-translate-y-0.5;
   }
   .chip {
-    @apply inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-teal-deep;
+    @apply inline-flex items-center gap-2 rounded-full border border-blue/30 bg-blue/10 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-blue-deep;
   }
   .chip-dark {
-    @apply inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/15 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-teal;
+    @apply inline-flex items-center gap-2 rounded-full border border-blue/40 bg-blue/15 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-blue;
   }
   .heading-xl {
     @apply font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl;

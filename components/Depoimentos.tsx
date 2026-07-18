@@ -15,22 +15,22 @@ function Stars() {
 
 export default function Depoimentos() {
   return (
-    <section className="py-24 md:py-32" id="resultados">
+    <section className="py-24 md:py-32" id="depoimentos">
       <div className="container-site">
         <div className="max-w-2xl">
           <Reveal>
-            <span className="chip">Quem já viveu isso</span>
+            <span className="chip">Depoimentos</span>
           </Reveal>
           <Reveal delay={0.08}>
             <h2 className="heading-lg mt-5">
-              Clínicas reais.{" "}
-              <span className="text-teal-deep">Agendas reais.</span>
+              Quem já viveu o processo{" "}
+              <span className="text-blue-deep">com a BlueVisa.</span>
             </h2>
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              Sem promessa vazia, sem milagre. Estratégia certa + execução
-              consistente = resultado que aparece na agenda.
+              Preparação séria, atendimento humano e organização — é isso que
+              transforma a burocracia do visto em uma etapa tranquila.
             </p>
           </Reveal>
         </div>
@@ -44,7 +44,7 @@ export default function Depoimentos() {
                   “{t.text}”
                 </blockquote>
                 <figcaption className="mt-7 flex items-center gap-4 border-t border-line pt-6">
-                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-teal to-teal-dark font-display text-lg font-extrabold text-white">
+                  <span className="flex h-12 w-12 items-center justify-center rounded-full bg-gradient-to-br from-blue to-blue-dark font-display text-lg font-extrabold text-white">
                     {t.initial}
                   </span>
                   <div>
