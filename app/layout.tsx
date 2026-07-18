@@ -67,44 +67,35 @@ const businessSchema = {
   alternateName: "BlueVisa Assessoria de Vistos Americanos",
   slogan: "Seu sonho americano começa aqui.",
   description:
-    "Assessoria particular e independente para todos os tipos de visto americano: turismo (B1/B2), estudante (F1/M1), intercâmbio (J1), trabalho, noivo(a) (K1) e investidor (E1/E2). Orientação administrativa, sem vínculo com o governo dos EUA e sem garantia de aprovação.",
+    "Assessoria particular e independente para todos os tipos de visto americano: turismo e negócios (B1/B2), renovação, estudante (F1/M1), intercâmbio (J1), trabalho (H, L, O, P), noivo(a) (K1), investidor (E1/E2) e imigração (EB-1 e EB-2 NIW). Orientação administrativa, sem vínculo com o governo dos EUA e sem garantia de aprovação.",
   url: SITE_URL + "/",
   telephone: "+5567981082158",
   email: "contato@bluevisausa.com",
-  priceRange: "R$597 - R$4.997",
   areaServed: { "@type": "Country", name: "Brasil" },
   makesOffer: [
     {
       "@type": "Offer",
       name: "Blue Start",
       description:
-        "Análise do perfil, checklist personalizado, preenchimento do DS-160, guia de pagamento, agendamento da entrevista e suporte via WhatsApp.",
-      price: "697",
-      priceCurrency: "BRL",
+        "Análise do perfil, checklist personalizado, preenchimento de formulários, guia de pagamento, agendamento da entrevista e suporte via WhatsApp.",
     },
     {
       "@type": "Offer",
       name: "Blue Premium",
       description:
         "Tudo do Blue Start, mais revisão documental, simulação da entrevista, reunião por vídeo e suporte prioritário.",
-      price: "1197",
-      priceCurrency: "BRL",
     },
     {
       "@type": "Offer",
       name: "Blue Family",
       description:
         "Atendimento para famílias com organização completa da documentação, agendamento conjunto e preparação personalizada.",
-      price: "2490",
-      priceCurrency: "BRL",
     },
     {
       "@type": "Offer",
       name: "Blue VIP",
       description:
         "Consultor exclusivo, atendimento prioritário, acompanhamento integral e reuniões ilimitadas durante o processo.",
-      price: "2990",
-      priceCurrency: "BRL",
     },
   ],
 };

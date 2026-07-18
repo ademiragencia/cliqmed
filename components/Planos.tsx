@@ -1,26 +1,6 @@
 import Reveal from "./Reveal";
 import { PLANS } from "@/lib/site";
 
-function Price({ prefix, value, light }: { prefix?: string; value: string; light?: boolean }) {
-  return (
-    <div className="mt-5">
-      {prefix && (
-        <div className={`font-display text-[11px] font-bold uppercase tracking-wider ${light ? "text-white/50" : "text-muted"}`}>
-          {prefix}
-        </div>
-      )}
-      <div className="flex items-baseline gap-1">
-        <span className={`font-display text-base font-bold ${light ? "text-white/50" : "text-muted"}`}>
-          R$
-        </span>
-        <span className="font-display text-4xl font-extrabold tracking-tight md:text-5xl">
-          {value}
-        </span>
-      </div>
-    </div>
-  );
-}
-
 export default function Planos() {
   return (
     <section className="bg-white py-24 md:py-32" id="planos">
@@ -37,9 +17,8 @@ export default function Planos() {
           </Reveal>
           <Reveal delay={0.16}>
             <p className="mt-5 text-lg leading-relaxed text-muted">
-              Pacotes de acompanhamento com pagamento único por processo, para
-              qualquer tipo de visto. Todos incluem atendimento 100% online e
-              suporte via WhatsApp.
+              Quatro níveis de acompanhamento, para qualquer tipo de visto.
+              Todos incluem atendimento 100% online e suporte via WhatsApp.
             </p>
           </Reveal>
         </div>
@@ -67,7 +46,6 @@ export default function Planos() {
                       </span>
                       <h3 className="mt-4 font-display text-2xl font-extrabold">{plan.name}</h3>
                       <p className="mt-1 text-sm text-white/60">{plan.desc}</p>
-                      <Price prefix={plan.pricePrefix} value={plan.price} light />
                     </div>
                     <ul className="grid gap-x-8 gap-y-3 border-white/10 sm:grid-cols-2 md:border-l md:pl-8">
                       {plan.features.map((f) => (
@@ -85,7 +63,7 @@ export default function Planos() {
                       rel="noopener"
                       className="flex items-center justify-center whitespace-nowrap rounded-full bg-blue px-8 py-4 font-display text-sm font-bold uppercase tracking-wider text-white transition-all hover:bg-white hover:text-deep hover:shadow-glow"
                     >
-                      Escolher plano
+                      Consultar valores
                     </a>
                   </div>
                 </div>
@@ -94,7 +72,6 @@ export default function Planos() {
                   <div>
                     <h3 className="font-display text-2xl font-extrabold">{plan.name}</h3>
                     <p className="mt-1 text-sm text-muted">{plan.desc}</p>
-                    <Price prefix={plan.pricePrefix} value={plan.price} />
                   </div>
                   <ul className="grid gap-x-8 gap-y-3 border-line sm:grid-cols-2 md:border-l md:pl-8">
                     {plan.features.map((f) => (
@@ -112,7 +89,7 @@ export default function Planos() {
                     rel="noopener"
                     className="flex items-center justify-center whitespace-nowrap rounded-full border-2 border-blue/40 px-8 py-4 font-display text-sm font-bold uppercase tracking-wider text-blue-deep transition-all hover:border-blue hover:bg-blue/5"
                   >
-                    Escolher plano
+                    Consultar valores
                   </a>
                 </div>
               )}
@@ -122,10 +99,11 @@ export default function Planos() {
 
         <Reveal delay={0.2}>
           <p className="mt-10 text-center text-sm text-muted">
-            As taxas consulares (de US$ 185 a US$ 315, conforme o tipo de
-            visto) são pagas por você diretamente ao governo americano.{" "}
+            Os valores de cada plano são apresentados no diagnóstico gratuito,
+            de acordo com o tipo de visto e o número de viajantes.{" "}
             <strong className="text-ink">
-              Nós emitimos as guias e orientamos cada pagamento.
+              As taxas do governo americano são pagas por você diretamente aos
+              órgãos oficiais.
             </strong>
           </p>
         </Reveal>

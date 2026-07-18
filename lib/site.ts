@@ -20,9 +20,7 @@ export type Visto = {
   sigla: string;
   nome: string;
   desc: string;
-  preco: string;
-  moeda?: "R$" | "US$";
-  taxa: string;
+  pontos: string[];
   cta: string;
 };
 
@@ -30,87 +28,109 @@ export const VISTOS: Visto[] = [
   {
     sigla: "B1/B2",
     nome: "Turismo e Negócios",
-    desc: "Passeios, compras, cruzeiros, eventos e reuniões de negócios.",
-    preco: "697",
-    taxa: "Taxa consular: US$ 185",
+    desc: "O visto mais procurado pelos brasileiros, com validade de até 10 anos. Permite turismo, visitas, compras, eventos e reuniões de negócios nos Estados Unidos.",
+    pontos: [
+      "Férias, parques, compras e cruzeiros",
+      "Visitas a familiares e amigos",
+      "Feiras, congressos e reuniões de negócios",
+    ],
     cta: wa("Olá! Quero assessoria para o visto de turismo e negócios (B1/B2)."),
   },
   {
     sigla: "B1/B2",
     nome: "Renovação de visto",
-    desc: "Renove seu visto vencido ou a vencer. Em muitos casos, sem nova entrevista.",
-    preco: "597",
-    taxa: "Taxa consular: US$ 185",
+    desc: "Para quem já teve visto americano e precisa renovar. Em muitos casos o processo dispensa nova entrevista, com envio dos documentos sem ir ao consulado.",
+    pontos: [
+      "Visto vencido ou perto de vencer",
+      "Análise de elegibilidade para isenção de entrevista",
+      "Processo mais rápido e simples",
+    ],
     cta: wa("Olá! Quero assessoria para renovar meu visto americano."),
   },
   {
     sigla: "F1/M1",
     nome: "Estudante",
-    desc: "Graduação, cursos de inglês, escolas e formação nos EUA.",
-    preco: "1.297",
-    taxa: "Taxa US$ 185 + SEVIS US$ 350",
+    desc: "Para estudar nos EUA: cursos de inglês, high school, graduação, pós-graduação e cursos técnicos, com matrícula em instituição aprovada pelo governo americano.",
+    pontos: [
+      "Cursos de idioma e escolas",
+      "Graduação e pós-graduação",
+      "Orientação sobre I-20 e taxa SEVIS",
+    ],
     cta: wa("Olá! Quero assessoria para o visto de estudante (F1/M1)."),
   },
   {
     sigla: "J1",
     nome: "Intercâmbio",
-    desc: "Au pair, summer work, pesquisa acadêmica e programas de intercâmbio.",
-    preco: "1.397",
-    taxa: "Taxa US$ 185 + SEVIS US$ 220",
+    desc: "Para programas de intercâmbio cultural aprovados, como au pair, summer work, treinamentos e pesquisa acadêmica, sempre com um patrocinador credenciado.",
+    pontos: [
+      "Au pair e summer work",
+      "Estágio e treinamento (trainee)",
+      "Pesquisadores e professores visitantes",
+    ],
     cta: wa("Olá! Quero assessoria para o visto de intercâmbio (J1)."),
   },
   {
     sigla: "H/L/O/P",
     nome: "Trabalho",
-    desc: "Profissionais, transferências entre empresas, atletas e artistas.",
-    preco: "2.497",
-    taxa: "Taxa consular: US$ 205",
+    desc: "Para quem tem oferta de trabalho, transferência ou carreira de destaque nos EUA. Cada categoria tem regras próprias e exige petição aprovada pelo USCIS.",
+    pontos: [
+      "H-1B: profissionais especializados",
+      "L-1: transferência entre empresas do mesmo grupo",
+      "O e P: talentos, atletas e artistas",
+    ],
     cta: wa("Olá! Quero assessoria para visto de trabalho nos EUA."),
   },
   {
     sigla: "K1",
     nome: "Noivo(a)",
-    desc: "Para quem vai se casar com cidadão americano nos EUA.",
-    preco: "3.497",
-    taxa: "Taxa consular: US$ 265",
+    desc: "Para quem vai se casar com cidadão americano nos Estados Unidos. O processo começa com a petição do noivo americano e o casamento acontece em até 90 dias após a chegada.",
+    pontos: [
+      "Organização da petição I-129F",
+      "Comprovação do relacionamento",
+      "Preparação completa para a entrevista",
+    ],
     cta: wa("Olá! Quero assessoria para o visto de noivo(a) (K1)."),
   },
   {
     sigla: "E1/E2",
     nome: "Investidor",
-    desc: "Empreendedores e investidores com negócios nos Estados Unidos.",
-    preco: "4.997",
-    taxa: "Taxa consular: US$ 315",
+    desc: "Para empreendedores e investidores de países com tratado comercial com os EUA que compram ou abrem um negócio no país e vão administrá-lo de perto.",
+    pontos: [
+      "Planejamento do investimento",
+      "Documentação completa da empresa",
+      "Renovável enquanto o negócio operar",
+    ],
     cta: wa("Olá! Quero assessoria para o visto de investidor (E1/E2)."),
   },
   {
     sigla: "EB-1",
     nome: "Imigração por talento",
-    desc: "Green Card para profissionais com habilidade extraordinária na sua área.",
-    preco: "9.000",
-    moeda: "US$",
-    taxa: "Taxas do governo (USCIS)",
+    desc: "Green Card para quem se destaca em ciências, artes, educação, negócios ou esportes. Reconhece a habilidade extraordinária e dispensa oferta de emprego.",
+    pontos: [
+      "Análise honesta de elegibilidade",
+      "Montagem do dossiê de evidências",
+      "Condução com advogados licenciados nos EUA",
+    ],
     cta: wa("Olá! Quero assessoria para o processo de imigração EB-1."),
   },
   {
     sigla: "EB-2 NIW",
     nome: "Interesse Nacional",
-    desc: "Green Card por interesse nacional, sem necessidade de oferta de emprego.",
-    preco: "9.000",
-    moeda: "US$",
-    taxa: "Taxas do governo (USCIS)",
+    desc: "Green Card por interesse nacional, para profissionais qualificados cujo trabalho beneficia os Estados Unidos. Dispensa oferta de emprego e patrocinador.",
+    pontos: [
+      "Avaliação do perfil e da tese NIW",
+      "Petição e documentação completas",
+      "Condução com advogados licenciados nos EUA",
+    ],
     cta: wa("Olá! Quero assessoria para o processo de imigração EB-2 NIW."),
   },
 ];
 
 export type Plan = {
   name: string;
-  price: string;
-  pricePrefix?: string;
   desc: string;
   featured: boolean;
   badge?: string;
-  bonus?: string;
   cta: string;
   features: string[];
 };
@@ -118,7 +138,6 @@ export type Plan = {
 export const PLANS: Plan[] = [
   {
     name: "Blue Start",
-    price: "697",
     desc: "O essencial para tirar seu visto com segurança.",
     featured: false,
     cta: wa("Olá! Quero saber mais sobre o plano Blue Start."),
@@ -133,7 +152,6 @@ export const PLANS: Plan[] = [
   },
   {
     name: "Blue Premium",
-    price: "1.197",
     desc: "Preparação completa, incluindo simulação da entrevista.",
     featured: true,
     badge: "Mais escolhido",
@@ -148,8 +166,6 @@ export const PLANS: Plan[] = [
   },
   {
     name: "Blue Family",
-    price: "2.490",
-    pricePrefix: "A partir de",
     desc: "A família inteira com o processo organizado de uma vez.",
     featured: false,
     cta: wa("Olá! Quero saber mais sobre o plano Blue Family."),
@@ -164,7 +180,6 @@ export const PLANS: Plan[] = [
   },
   {
     name: "Blue VIP",
-    price: "2.990",
     desc: "Experiência exclusiva, com consultor dedicado ao seu caso.",
     featured: false,
     cta: wa("Olá! Quero saber mais sobre o plano Blue VIP."),
@@ -196,8 +211,8 @@ export const FAQS = [
     a: "Não precisa ser, e essa é uma das nossas maiores vantagens. Todo o processo é 100% online: atendimento por WhatsApp, e-mail e videochamada, com portal do cliente para acompanhar cada etapa. Atendemos o Brasil inteiro, sem deslocamento.",
   },
   {
-    q: "As taxas do governo americano estão incluídas nos valores?",
-    a: "Não. As taxas consulares variam conforme o tipo de visto: US$ 185 para turismo e estudo, US$ 205 para vistos de trabalho, US$ 265 para noivo(a) e US$ 315 para investidor, além da taxa SEVIS para estudantes e intercambistas. Elas são pagas por você diretamente ao governo americano. Nós emitimos as guias e orientamos cada pagamento.",
+    q: "Quanto custa a assessoria?",
+    a: "O valor depende do tipo de visto, do plano escolhido e do número de viajantes. No diagnóstico gratuito você recebe o orçamento completo, com transparência e sem surpresas. As taxas do governo americano são sempre pagas por você diretamente aos órgãos oficiais e não fazem parte dos nossos honorários. Nós emitimos as guias e orientamos cada pagamento.",
   },
   {
     q: "Quanto tempo leva o processo?",
