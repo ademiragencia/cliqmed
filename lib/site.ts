@@ -9,8 +9,8 @@ export const WA_DEFAULT = wa("Olá! Vim pelo site da BlueVisa e quero saber mais
 export const WA_DIAGNOSTICO = wa("Olá! Quero o diagnóstico gratuito do meu perfil com a BlueVisa.");
 
 export const NAV_LINKS = [
-  { href: "#metodo", label: "Como funciona" },
-  { href: "#depoimentos", label: "Depoimentos" },
+  { href: "#servicos", label: "Serviços" },
+  { href: "#jornada", label: "Como funciona" },
   { href: "#planos", label: "Planos" },
   { href: "#faq", label: "FAQ" },
 ];
@@ -143,15 +143,3 @@ export const TESTIMONIALS = [
   },
 ];
 
-export const PROFILES = [
-  "Turismo",
-  "Negócios",
-  "Famílias",
-  "Primeiro visto",
-  "Renovação",
-  "Disney & Orlando",
-  "Lua de mel",
-  "Cruzeiros",
-  "Compras",
-  "Eventos & shows",
-];

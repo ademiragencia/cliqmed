@@ -1,15 +1,13 @@
-import Topbar from "@/components/Topbar";
 import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
-import Stats from "@/components/Stats";
-import Problema from "@/components/Problema";
-import Metodo from "@/components/Metodo";
-import Comparacao from "@/components/Comparacao";
-import Depoimentos from "@/components/Depoimentos";
-import Marquee from "@/components/Marquee";
-import Processo from "@/components/Processo";
-import Garantia from "@/components/Garantia";
+import Diferenciais from "@/components/Diferenciais";
+import Servicos from "@/components/Servicos";
+import Jornada from "@/components/Jornada";
+import MissaoValores from "@/components/MissaoValores";
 import Planos from "@/components/Planos";
+import Depoimentos from "@/components/Depoimentos";
+import Transparencia from "@/components/Transparencia";
+import Formulario from "@/components/Formulario";
 import Faq from "@/components/Faq";
 import CtaFinal from "@/components/CtaFinal";
 import Footer from "@/components/Footer";
@@ -33,19 +31,17 @@ export default function Home() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <Topbar />
       <Navbar />
       <main>
         <Hero />
-        <Stats />
-        <Problema />
-        <Metodo />
-        <Comparacao />
-        <Depoimentos />
-        <Marquee />
-        <Processo />
-        <Garantia />
+        <Diferenciais />
+        <Servicos />
+        <Jornada />
         <Planos />
+        <Depoimentos />
+        <MissaoValores />
+        <Transparencia />
+        <Formulario />
         <Faq />
         <CtaFinal />
       </main>

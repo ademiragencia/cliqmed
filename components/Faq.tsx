@@ -10,8 +10,8 @@ export default function Faq() {
 
   return (
     <section className="py-24 md:py-32" id="faq">
-      <div className="container-site grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
-        <div>
+      <div className="container-site">
+        <div className="mx-auto max-w-2xl text-center">
           <Reveal>
             <span className="chip">Perguntas frequentes</span>
           </Reveal>
@@ -21,32 +21,13 @@ export default function Faq() {
               <span className="text-blue-deep">com transparência.</span>
             </h2>
           </Reveal>
-          <Reveal delay={0.16}>
-            <p className="mt-5 leading-relaxed text-muted">
-              Não achou a sua? Chama no WhatsApp — respondemos qualquer pergunta
-              sobre o processo, sem compromisso.
-            </p>
-          </Reveal>
-          <Reveal delay={0.24}>
-            <a
-              href={WA_DEFAULT}
-              target="_blank"
-              rel="noopener"
-              className="mt-6 inline-flex items-center gap-2 border-b-2 border-blue pb-1 font-display text-sm font-bold uppercase tracking-wider text-blue-deep transition-all hover:gap-4"
-            >
-              Falar com a BlueVisa
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
-                <path d="M5 12h14M13 5l7 7-7 7" />
-              </svg>
-            </a>
-          </Reveal>
         </div>
 
-        <div className="flex flex-col gap-3.5">
+        <div className="mx-auto mt-14 flex max-w-3xl flex-col gap-3.5">
           {FAQS.map((f, i) => {
             const open = openIdx === i;
             return (
-              <Reveal key={f.q} delay={i * 0.05}>
+              <Reveal key={f.q} delay={i * 0.04}>
                 <div
                   className={`card overflow-hidden transition-colors ${open ? "border-blue/40" : ""}`}
                 >
@@ -84,6 +65,21 @@ export default function Faq() {
             );
           })}
         </div>
+
+        <Reveal delay={0.2}>
+          <p className="mt-10 text-center text-muted">
+            Não achou a sua dúvida?{" "}
+            <a
+              href={WA_DEFAULT}
+              target="_blank"
+              rel="noopener"
+              className="font-display font-bold text-blue-deep underline decoration-blue/40 underline-offset-4 transition-colors hover:text-blue"
+            >
+              Pergunte no WhatsApp
+            </a>{" "}
+            — respondemos sem compromisso.
+          </p>
+        </Reveal>
       </div>
     </section>
   );

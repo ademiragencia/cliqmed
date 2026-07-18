@@ -7,22 +7,15 @@ function Logo() {
   return (
     <a
       href="#inicio"
-      className="flex items-center gap-1 font-display text-2xl font-extrabold tracking-tight"
+      className="flex items-center gap-1.5 font-display text-2xl font-extrabold tracking-tight text-white"
       aria-label="BlueVisa — início"
     >
+      <svg className="text-blue" width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
+        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" transform="rotate(-42 12 12)" />
+      </svg>
       <span>
         Blue<span className="text-blue">Visa</span>
       </span>
-      <svg
-        className="-mt-1 text-blue"
-        width="18"
-        height="18"
-        viewBox="0 0 24 24"
-        fill="currentColor"
-        aria-hidden
-      >
-        <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" transform="rotate(-42 12 12)" />
-      </svg>
     </a>
   );
 }
@@ -51,21 +44,21 @@ export default function Navbar() {
   return (
     <>
       <header
-        className={`sticky top-0 z-50 transition-all duration-300 ${
+        className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
           scrolled
-            ? "border-b border-line bg-white/85 shadow-soft backdrop-blur-xl"
+            ? "border-b border-white/10 bg-deep-darker/90 shadow-lift backdrop-blur-xl"
             : "bg-transparent"
         }`}
       >
-        <nav className="container-site flex items-center justify-between py-4">
+        <nav className="container-site flex items-center justify-between py-5">
           <Logo />
 
-          <ul className="hidden items-center gap-8 md:flex">
+          <ul className="hidden items-center gap-9 md:flex">
             {NAV_LINKS.map((l) => (
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-display text-sm font-semibold text-muted transition-colors hover:text-ink"
+                  className="font-display text-sm font-semibold text-white/70 transition-colors hover:text-white"
                 >
                   {l.label}
                 </a>
@@ -77,7 +70,7 @@ export default function Navbar() {
             href={WA_DIAGNOSTICO}
             target="_blank"
             rel="noopener"
-            className="hidden rounded-full bg-ink px-6 py-3 font-display text-sm font-bold text-white transition-all hover:bg-blue-dark hover:shadow-glow md:inline-flex"
+            className="hidden rounded-full border border-blue/60 px-6 py-2.5 font-display text-sm font-bold text-blue transition-all hover:bg-blue hover:text-white hover:shadow-glow md:inline-flex"
           >
             Diagnóstico gratuito
           </a>
@@ -89,13 +82,13 @@ export default function Navbar() {
             onClick={() => setOpen(!open)}
           >
             <span
-              className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "translate-y-2 rotate-45" : ""}`}
+              className={`h-0.5 w-6 rounded bg-white transition-all duration-300 ${open ? "translate-y-2 rotate-45" : ""}`}
             />
             <span
-              className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`}
+              className={`h-0.5 w-6 rounded bg-white transition-all duration-300 ${open ? "opacity-0" : ""}`}
             />
             <span
-              className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "-translate-y-2 -rotate-45" : ""}`}
+              className={`h-0.5 w-6 rounded bg-white transition-all duration-300 ${open ? "-translate-y-2 -rotate-45" : ""}`}
             />
           </button>
         </nav>
@@ -103,7 +96,7 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-bg/95 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-deep-darker/95 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -112,7 +105,7 @@ export default function Navbar() {
             key={l.href}
             href={l.href}
             onClick={() => setOpen(false)}
-            className="p-4 font-display text-2xl font-bold text-ink"
+            className="p-4 font-display text-2xl font-bold text-white"
           >
             {l.label}
           </a>
