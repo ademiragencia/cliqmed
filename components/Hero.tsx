@@ -2,6 +2,7 @@
 
 import { motion, useReducedMotion } from "framer-motion";
 import { WA_DEFAULT } from "@/lib/site";
+import { LogoMark } from "./Logo";
 
 const STARS: Array<[number, number, number]> = [
   [8, 12, 2], [15, 72, 1], [22, 38, 1], [30, 88, 2], [12, 55, 1],
@@ -32,9 +33,7 @@ function BoardingPass() {
         <div className="flex-1 p-7 md:p-8">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-1.5 font-display text-sm font-extrabold tracking-tight">
-              <svg className="text-blue" width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" transform="rotate(-42 12 12)" />
-              </svg>
+              <LogoMark variant="dark" className="h-7 w-7" />
               Blue<span className="text-blue">Visa</span>
             </div>
             <div className="font-display text-[10px] font-bold uppercase tracking-[0.22em] text-muted">

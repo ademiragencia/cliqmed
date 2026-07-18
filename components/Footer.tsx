@@ -1,4 +1,5 @@
 import { NAV_LINKS, WA_DEFAULT } from "@/lib/site";
+import BrandLogo from "./Logo";
 
 const FUTURO = [
   "Seguro viagem",
@@ -14,12 +15,7 @@ export default function Footer() {
       <div className="container-site">
         <div className="grid gap-12 md:grid-cols-[1.2fr_0.8fr_1fr]">
           <div>
-            <div className="flex items-center gap-1.5 font-display text-2xl font-extrabold tracking-tight">
-              <svg className="text-blue" width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden>
-                <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z" transform="rotate(-42 12 12)" />
-              </svg>
-              Blue<span className="text-blue">Visa</span>
-            </div>
+            <BrandLogo variant="light" markClass="h-12 w-12" typeClass="text-2xl" />
             <p className="mt-2 text-sm text-white/55">Seu sonho americano começa aqui.</p>
             <p className="mt-6 max-w-sm text-xs leading-relaxed text-white/40">
               Em breve na BlueVisa:{" "}
