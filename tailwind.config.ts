@@ -1,37 +1,32 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./app/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-  ],
+  content: ["./app/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}"],
   theme: {
     extend: {
       colors: {
-        bg: "#F6FAF9",
-        surface: "#FFFFFF",
-        ink: "#0A211D",
-        muted: "#5C6F6A",
-        line: "#E2ECE9",
-        teal: {
-          DEFAULT: "#00B4A2",
-          dark: "#00907F",
-          deep: "#007D6F",
+        base: "#05070A",       // near-black
+        panel: "#0A0F14",      // raised panels
+        panel2: "#0E141B",
+        line: "rgba(255,255,255,0.08)",
+        ink: "#EAF2F0",         // primary text
+        muted: "#8A9BA0",       // secondary text
+        neon: {
+          DEFAULT: "#3BF7C4",   // neon mint-green
+          soft: "#7CFFDB",
+          deep: "#12C79B",
         },
-        deep: {
-          DEFAULT: "#062E28",
-          darker: "#04211D",
-        },
-        amber: "#FFB547",
+        lime: "#B8FF3B",
+        violet: "#7C5CFF",
       },
       fontFamily: {
         display: ["var(--font-display)", "system-ui", "sans-serif"],
         body: ["var(--font-body)", "system-ui", "sans-serif"],
       },
       boxShadow: {
-        soft: "0 2px 20px rgba(10, 33, 29, 0.06)",
-        lift: "0 20px 50px -12px rgba(10, 33, 29, 0.18)",
-        glow: "0 8px 40px rgba(0, 180, 162, 0.35)",
+        neon: "0 0 40px rgba(59,247,196,0.35)",
+        neonStrong: "0 0 60px rgba(59,247,196,0.55)",
+        card: "0 24px 60px -20px rgba(0,0,0,0.7)",
       },
       keyframes: {
         marquee: {
@@ -39,23 +34,34 @@ const config: Config = {
           "100%": { transform: "translateX(-50%)" },
         },
         floaty: {
-          "0%, 100%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
+          "0%,100%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-12px)" },
         },
         ring: {
           "0%": { transform: "scale(1)", opacity: "0.6" },
-          "100%": { transform: "scale(1.7)", opacity: "0" },
+          "100%": { transform: "scale(1.8)", opacity: "0" },
         },
         blink: {
-          "0%, 100%": { opacity: "1" },
-          "50%": { opacity: "0.25" },
+          "0%,100%": { opacity: "1" },
+          "50%": { opacity: "0.2" },
+        },
+        aurora: {
+          "0%,100%": { transform: "translate(0,0) scale(1)" },
+          "33%": { transform: "translate(6%,-4%) scale(1.1)" },
+          "66%": { transform: "translate(-5%,5%) scale(0.95)" },
+        },
+        shimmer: {
+          "0%": { backgroundPosition: "200% center" },
+          "100%": { backgroundPosition: "-200% center" },
         },
       },
       animation: {
-        marquee: "marquee 32s linear infinite",
-        floaty: "floaty 4s ease-in-out infinite",
-        ring: "ring 1.8s ease-out infinite",
+        marquee: "marquee 30s linear infinite",
+        floaty: "floaty 5s ease-in-out infinite",
+        ring: "ring 2s ease-out infinite",
         blink: "blink 1.4s ease-in-out infinite",
+        aurora: "aurora 18s ease-in-out infinite",
+        shimmer: "shimmer 6s linear infinite",
       },
     },
   },

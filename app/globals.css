@@ -5,52 +5,69 @@
 @layer base {
   html {
     scroll-behavior: smooth;
-    scroll-padding-top: 96px;
+    scroll-padding-top: 90px;
   }
   body {
-    @apply bg-bg text-ink font-body antialiased;
+    @apply bg-base text-ink font-body antialiased;
+    background-image:
+      radial-gradient(900px 500px at 80% -10%, rgba(59,247,196,0.08), transparent 60%),
+      radial-gradient(700px 500px at 0% 20%, rgba(124,92,255,0.06), transparent 60%);
+    background-attachment: fixed;
   }
   ::selection {
-    @apply bg-teal/25 text-ink;
+    @apply bg-neon/30 text-ink;
   }
-  ::-webkit-scrollbar {
-    width: 6px;
-  }
-  ::-webkit-scrollbar-track {
-    @apply bg-bg;
-  }
-  ::-webkit-scrollbar-thumb {
-    @apply bg-teal/60 rounded-full;
-  }
-  :focus-visible {
-    @apply outline-2 outline-offset-2 outline-teal rounded-sm;
-  }
+  ::-webkit-scrollbar { width: 7px; }
+  ::-webkit-scrollbar-track { @apply bg-base; }
+  ::-webkit-scrollbar-thumb { @apply bg-neon-deep/60 rounded-full; }
+  :focus-visible { @apply outline-2 outline-offset-2 outline-neon rounded-sm; }
 }
 
 @layer components {
-  .container-site {
-    @apply mx-auto w-full max-w-6xl px-5 md:px-8;
-  }
+  .container-site { @apply mx-auto w-full max-w-6xl px-5 md:px-8; }
+
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full bg-teal px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-deep-darker transition-all duration-300 hover:bg-teal-dark hover:text-white hover:-translate-y-0.5 hover:shadow-glow;
+    @apply relative inline-flex items-center justify-center gap-2.5 rounded-full bg-neon px-7 py-4 font-display text-sm font-bold uppercase tracking-wide text-base transition-all duration-300 hover:-translate-y-0.5 hover:bg-neon-soft hover:shadow-neonStrong;
   }
   .btn-ghost {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full border-2 border-ink/15 px-7 py-4 font-display text-sm font-bold uppercase tracking-wider text-ink transition-all duration-300 hover:border-teal hover:text-teal-deep hover:-translate-y-0.5;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full border border-line bg-white/[0.03] px-7 py-4 font-display text-sm font-bold uppercase tracking-wide text-ink backdrop-blur transition-all duration-300 hover:border-neon/50 hover:text-neon;
   }
+
   .chip {
-    @apply inline-flex items-center gap-2 rounded-full border border-teal/30 bg-teal/10 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-teal-deep;
+    @apply inline-flex items-center gap-2 rounded-full border border-neon/25 bg-neon/[0.08] px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-neon;
   }
-  .chip-dark {
-    @apply inline-flex items-center gap-2 rounded-full border border-teal/40 bg-teal/15 px-4 py-1.5 font-display text-xs font-bold uppercase tracking-[0.18em] text-teal;
+
+  .glass {
+    @apply rounded-3xl border border-line bg-white/[0.035] backdrop-blur-md;
   }
+  .glass-hover {
+    @apply transition-all duration-300 hover:-translate-y-1.5 hover:border-neon/30 hover:bg-white/[0.06] hover:shadow-card;
+  }
+
   .heading-xl {
-    @apply font-display text-4xl font-extrabold leading-[1.05] tracking-tight md:text-6xl;
+    @apply font-display text-[13vw] leading-[0.92] font-bold tracking-tight sm:text-6xl md:text-7xl lg:text-[86px];
   }
   .heading-lg {
-    @apply font-display text-3xl font-extrabold leading-[1.08] tracking-tight md:text-5xl;
+    @apply font-display text-4xl font-bold leading-[1.02] tracking-tight md:text-6xl;
   }
-  .card {
-    @apply rounded-3xl border border-line bg-surface shadow-soft;
+
+  .text-gradient {
+    background: linear-gradient(100deg, #3BF7C4 0%, #B8FF3B 45%, #7CFFDB 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .text-shimmer {
+    background: linear-gradient(100deg, #EAF2F0 30%, #3BF7C4 50%, #EAF2F0 70%);
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    @apply animate-shimmer;
+  }
+
+  .hairline {
+    @apply h-px w-full bg-gradient-to-r from-transparent via-white/12 to-transparent;
   }
 }
 
@@ -66,14 +83,10 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  html {
-    scroll-behavior: auto;
-  }
+  html { scroll-behavior: auto; }
 }

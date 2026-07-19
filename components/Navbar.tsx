@@ -8,7 +8,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 40);
+    const onScroll = () => setScrolled(window.scrollY > 30);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -28,14 +28,12 @@ export default function Navbar() {
     <>
       <header
         className={`sticky top-0 z-50 transition-all duration-300 ${
-          scrolled
-            ? "border-b border-line bg-white/85 shadow-soft backdrop-blur-xl"
-            : "bg-transparent"
+          scrolled ? "border-b border-line bg-base/70 backdrop-blur-xl" : "border-b border-transparent"
         }`}
       >
         <nav className="container-site flex items-center justify-between py-4">
-          <a href="#inicio" className="font-display text-2xl font-extrabold tracking-tight">
-            cliqmed<span className="text-teal">.</span>
+          <a href="#inicio" className="font-display text-2xl font-bold tracking-tight">
+            cliqmed<span className="text-neon">.</span>
           </a>
 
           <ul className="hidden items-center gap-8 md:flex">
@@ -43,7 +41,7 @@ export default function Navbar() {
               <li key={l.href}>
                 <a
                   href={l.href}
-                  className="font-display text-sm font-semibold text-muted transition-colors hover:text-ink"
+                  className="font-display text-sm font-medium text-muted transition-colors hover:text-ink"
                 >
                   {l.label}
                 </a>
@@ -55,9 +53,9 @@ export default function Navbar() {
             href={WA_DIAGNOSTICO}
             target="_blank"
             rel="noopener"
-            className="hidden rounded-full bg-ink px-6 py-3 font-display text-sm font-bold text-white transition-all hover:bg-teal-dark hover:shadow-glow md:inline-flex"
+            className="hidden items-center gap-2 rounded-full border border-neon/40 bg-neon/10 px-5 py-2.5 font-display text-sm font-bold text-neon transition-all hover:bg-neon hover:text-base hover:shadow-neon md:inline-flex"
           >
-            Diagnóstico gratuito
+            Diagnóstico grátis
           </a>
 
           <button
@@ -66,22 +64,15 @@ export default function Navbar() {
             aria-expanded={open}
             onClick={() => setOpen(!open)}
           >
-            <span
-              className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "translate-y-2 rotate-45" : ""}`}
-            />
-            <span
-              className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`}
-            />
-            <span
-              className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "-translate-y-2 -rotate-45" : ""}`}
-            />
+            <span className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "translate-y-2 rotate-45" : ""}`} />
+            <span className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "opacity-0" : ""}`} />
+            <span className={`h-0.5 w-6 rounded bg-ink transition-all duration-300 ${open ? "-translate-y-2 -rotate-45" : ""}`} />
           </button>
         </nav>
       </header>
 
-      {/* Mobile menu */}
       <div
-        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-bg/95 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
+        className={`fixed inset-0 z-40 flex flex-col items-center justify-center gap-2 bg-base/95 backdrop-blur-xl transition-opacity duration-300 md:hidden ${
           open ? "opacity-100" : "pointer-events-none opacity-0"
         }`}
       >
@@ -102,7 +93,7 @@ export default function Navbar() {
           onClick={() => setOpen(false)}
           className="btn-primary mt-6"
         >
-          Diagnóstico gratuito
+          Diagnóstico grátis
         </a>
       </div>
     </>
