@@ -1,0 +1,8 @@
+{
+  "name": "Cliqmed",
+  "description": "Agência de Marketing Digital para Clínicas e Consultórios - A agência que transforma anúncio em consulta marcada.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
